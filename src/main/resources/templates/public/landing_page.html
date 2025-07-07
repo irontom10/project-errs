@@ -1,10 +1,144 @@
+<!--
+    Converted from PHP to Thymeleaf/Spring Boot:
+    - Session/redirect logic is now in the controller.
+    - PHP variables replaced with Thymeleaf expressions.
+    - All PHP code removed.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERRS</title>
+    <link rel="icon" type="image/x-icon" th:href="@{${linkFavicon}}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#FFD700',
+                        navy: '#000080',
+                    }
+                }
+            }
+        }
+    </script>
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.getElementById("mobile-menu");
+            mobileMenu.classList.toggle("hidden");
+            mobileMenu.classList.toggle("flex");
+        }
+
+        function SelectTab(evt, TabName) {
+            // Hide all tab content
+            let tabcontent = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.add("hidden");
+            }
+
+            // Remove "active" class from all tablinks
+            let tablinks = document.getElementsByClassName("tablinks");
+            for (let i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(TabName).classList.remove("hidden");
+            evt.currentTarget.classList.add("active");
+
+            // Hide the mobile menu after selecting a tab (for mobile view)
+            const mobileMenu = document.getElementById("mobile-menu");
+            if (!mobileMenu.classList.contains("md:flex")) {
+                mobileMenu.classList.add("hidden");
+                mobileMenu.classList.remove("flex");
+            }
+        }
+
+        // Set the default tab on window load
+        window.onload = function() {
+            const mobileMenu = document.getElementById("mobile-menu");
+            document.querySelectorAll(".tablinks")[0].click();
+            mobileMenu.classList.toggle("hidden");
+        };
+    </script>
 </head>
-<body>
-    this is the index page
+<body class="bg-navy text-gold min-h-screen flex flex-col items-center text-sm">
+<nav class="flex justify-between items-center w-full p-4 outline outline-2 outline-gold bg-gray-800">
+    <h1 class="text-3xl font-serif">
+        Emergency Road & Repair Service
+    </h1>
+    <div class="md:hidden">
+        <button onclick="toggleMenu()" class="text-gold focus:outline-none">
+            ☰
+        </button>
+    </div>
+    <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-75 hidden flex-col items-center justify-center space-y-4 md:relative md:flex md:flex-row md:space-y-0 md:space-x-4 md:bg-opacity-0">
+        <button class="tablinks outline outline-2 outline-gold rounded-lg px-4 py-2 w-32 mx-2" onclick="toggleMenu(); SelectTab(event, 'Home')">Home</button>
+        <button class="tablinks outline outline-2 outline-gold rounded-lg px-4 py-2 w-32 mx-2" onclick="toggleMenu(); SelectTab(event, 'Contact')">Contact</button>
+        <button class="tablinks outline outline-2 outline-gold rounded-lg px-4 py-2 w-32 mx-2" onclick="toggleMenu(); SelectTab(event, 'About')">About</button>
+        <a th:href="@{${linkLogin}}" class="outline outline-2 outline-gold rounded-lg px-4 py-2 w-32 mx-2 text-center">Login</a>
+    </div>
+</nav>
+<div id="Home" class="tab-content p-6 hidden text-center">
+    <h2 class="text-3xl font-bold mb-4">Welcome to ERRS</h2>
+    <p class="text-lg">Your go-to service for emergency road and repair assistance.</p>
+</div>
+<div id="Contact" class="tab-content p-6 hidden text-center">
+    <h2 class="text-3xl font-bold mb-4">Contact Us</h2>
+    <div class="space-y-4">
+        <div>
+            <h3 class="text-xl font-semibold">Phone</h3>
+            <p>Immediate Assistance: <a href="tel:+12298885307" class="text-gold hover:underline">+1 (229) 888-5307</a></p>
+        </div>
+        <div>
+            <h3 class="text-xl font-semibold">Email</h3>
+            <p>Tony Mcleod: <a href="mailto:tmcleod@errs.net" class="text-gold hover:underline">tmcleod@errs.net</a></p>
+        </div>
+        <div>
+            <h3 class="text-xl font-semibold">Address</h3>
+            <p>2726 Lonesome Rd</p>
+            <p>Albany Ga, Ga 31721</p>
+        </div>
+    </div>
+</div>
+<div id="About" class="tab-content p-6 hidden text-center">
+    <h2 class="text-3xl font-bold mb-4">About Us</h2>
+    <section class="bg-gray-800 shadow-md rounded-lg p-8 mb-8">
+        <h1 class="text-4xl font-bold mb-4">About Emergency Road & Repair Service</h1>
+        <p class="mb-6">Welcome to Emergency Road & Repair Service (ERRS), your trusted partner in keeping you safe and moving when it matters most. Established over a decade ago, ERRS has been committed to providing 24/7 emergency roadside assistance and reliable vehicle repair services to drivers across the region. Our mission is simple: to offer dependable help and peace of mind, whether you're facing a breakdown on a busy highway or need routine maintenance to keep your vehicle in top shape.</p>
+    </section>
+
+    <section class="bg-gray-800 shadow-md rounded-lg p-8 mb-8">
+        <h2 class="text-3xl font-bold mb-4">Our Services</h2>
+        <p class="mb-6">At ERRS, we understand that vehicle troubles can be unpredictable and stressful. That's why we offer a comprehensive range of services, designed to get you back on the road quickly and safely. Our services include emergency roadside assistance, towing, on-site repairs, battery jump-starts, fuel delivery, tire changes, and more. We also provide scheduled maintenance and repair services through our certified mechanics, ensuring your vehicle stays reliable for years to come.</p>
+    </section>
+
+    <section class="bg-gray-800 shadow-md rounded-lg p-8 mb-8">
+        <h2 class="text-3xl font-bold mb-4">Why Choose Us?</h2>
+        <ul class="list-disc list-inside space-y-4">
+            <li><strong>Fast and Reliable Assistance</strong>: Our team of skilled technicians is available around the clock, ready to respond swiftly to your call. We pride ourselves on our prompt response times, because we know that every minute counts when you're stranded.</li>
+            <li><strong>Professional and Experienced Technicians</strong>: Our certified technicians are not only highly trained but also bring years of hands-on experience to every job. No matter the issue, you can count on us to deliver a solution with expertise and care.</li>
+            <li><strong>Customer-First Approach</strong>: We put our customers first. From the moment you call us to the time your vehicle is back on the road, our team is focused on providing exceptional customer service. We believe in transparent communication, fair pricing, and always going the extra mile to ensure your satisfaction.</li>
+        </ul>
+    </section>
+
+    <section class="bg-gray-800 shadow-md rounded-lg p-8 mb-8">
+        <h2 class="text-3xl font-bold mb-4">Our Commitment to Safety</h2>
+        <p class="mb-6">Safety is at the core of everything we do. We take every precaution to ensure that you, your passengers, and your vehicle are safe at all times. Our technicians follow industry best practices and are equipped with state-of-the-art tools and technology to handle any roadside situation effectively.</p>
+    </section>
+
+    <section class="bg-gray-800 shadow-md rounded-lg p-8 mb-8">
+        <h2 class="text-3xl font-bold mb-4">Community Focus</h2>
+        <p class="mb-6">ERRS is proud to be part of the community we serve. We support local events, partner with other local businesses, and strive to give back whenever we can. Our goal is not just to be a roadside service provider but to be an integral part of a network that helps our community thrive.</p>
+    </section>
+
+    <section class="bg-gray-800 shadow-md rounded-lg p-8">
+        <h2 class="text-3xl font-bold mb-4">Contact Us</h2>
+        <p>If you're in need of emergency assistance or have any questions about our services, don't hesitate to reach out. We're here for you 24/7, ready to provide the help you need.</p>
+        <p class="mt-6">Thank you for trusting Emergency Road & Repair Service. We look forward to being your reliable partner on the road, wherever your journey takes you.</p>
+    </section>
+</div>
 </body>
 </html>
