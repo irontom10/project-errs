@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Errs</title>
+</head>
+<body>
+    <h1>Welcome to Project Errs</h1>
+    <p>This is a simple web application to demonstrate error handling.</p>
+    <p>Current time: <span th:text="${currentTime}"></span></p>
+    <p th:if="${errorMessage}" th:text="${errorMessage}"></p>
+    <P th:text="${myVar}"></P>
+    </P>
+</body>
+</html>
