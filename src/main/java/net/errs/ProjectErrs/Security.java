@@ -15,10 +15,11 @@ public class Security {
         http
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/public/**", "/").permitAll() // Allow access to public paths
+                        .requestMatchers("/**", "/").permitAll() // Allow access to public paths
                         .requestMatchers("/private/**").authenticated() // Require auth for private paths
                 )
                 .formLogin(form -> form
-                        .loginPage("/login") // Custom login page
+                        .loginPage("/public/login") // Custom login page
                         .permitAll()
                 )
                 .logout(logout -> logout

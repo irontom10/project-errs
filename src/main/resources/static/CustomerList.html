@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Info</title>
+    <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 text-yellow-400 p-6">
+
+<h1 class="text-3xl font-bold mb-6">Customer Records</h1>
+
+<!-- HTMX: load JSON data on page load -->
+<div hx-get="api/v1/customers" hx-trigger="load" hx-target="#results" hx-swap="innerHTML">
+</div>
+
+<!-- Result container -->
+<div id="results" class="space-y-6"></div>
+
+<script>
+    // This script runs after htmx loads the data
+    document.addEventListener("htmx:afterOnLoad", function (evt) {
+      const json = evt.detail.xhr.responseText;
+      try {
+        const data = JSON.parse(json);
+        const results = document.getElementById("results");
+        results.innerHTML = "";
+
+        data.forEach(cust => {
+          const div = document.createElement("div");
+          div.className = "bg-gray-800 border border-gray-700 rounded-lg p-6 shadow-md";
+
+          div.innerHTML = `
+            <h2 class="text-2xl font-semibold mb-2">${cust.companyName}</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-300">
+              <div>
+                <p><span class="font-medium text-yellow-400">Address:</span> ${cust.address}, ${cust.city}, ${cust.state} ${cust.postalCode}</p>
+                <p><span class="font-medium text-yellow-400">Contact:</span> ${cust.contactLastName ?? ""} ${cust.contactFirstName ?? ""}</p>
+                <p><span class="font-medium text-yellow-400">Work Phone:</span> ${cust.workPhone ?? "N/A"} Ext: ${cust.workExt ?? ""}</p>
+                <p><span class="font-medium text-yellow-400">Email:</span> ${cust.emailAddr ?? "N/A"}</p>
+                <p><span class="font-medium text-yellow-400">Tax Exempt:</span> ${cust.taxExempt ? "Yes" : "No"}</p>
+              </div>
+              <div>
+                <p class="font-medium text-yellow-400">Internal Comments:</p>
+                <pre class="whitespace-pre-wrap bg-gray-700 p-3 rounded text-sm text-gray-100">${cust.internalComments ?? "None"}</pre>
+              </div>
+            </div>
+          `;
+          results.appendChild(div);
+        });
+      } catch (e) {
+        console.error("Failed to parse JSON", e);
+      }
+    });
+</script>
+
+</body>
+
+</html>

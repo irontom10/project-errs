@@ -1,0 +1,5757 @@
+[
+  {
+    "tableName": "ErrorLog",
+    "columns": [
+      {
+        "name": "ID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Err_Date/Time",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "ErrorCode",
+        "type": "TEXT",
+        "length": 20
+      },
+      {
+        "name": "Description",
+        "type": "TEXT",
+        "length": 200
+      },
+      {
+        "name": "Object",
+        "type": "TEXT",
+        "length": 60
+      },
+      {
+        "name": "Event",
+        "type": "TEXT",
+        "length": 60
+      }
+    ]
+  },
+  {
+    "tableName": "Paste Errors",
+    "columns": [
+      {
+        "name": "WorkOrderPartID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "WorkOrderID",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "PartID",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "PartDescription",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "Quantity",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "Price",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Cost",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "CoreAveCost",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "CoreDep",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "HazWasteCharge",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "FET",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "PartTaxable",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "CoreTaxable",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "GroupID",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "VendorID",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "PartPONumber",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "PWarranty",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "EmployeeID",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "POrder",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Return",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "ReturnLocation",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "IsTire",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "TireSize",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "PComp",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "PCompDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "WOLaborID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "RefundTCores",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "IncludeCore",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "CoreCheck",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "HazWasTaxable",
+        "type": "BOOLEAN",
+        "length": 1
+      }
+    ]
+  },
+  {
+    "tableName": "tblA2KIntCars",
+    "columns": [
+      {
+        "name": "AAIAYEAR",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "AAIAMAKE",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "AAIAMODEL",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "AAIANUMBER",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "AAIAENGINE",
+        "type": "TEXT",
+        "length": 510
+      }
+    ]
+  },
+  {
+    "tableName": "tblAPDetail",
+    "columns": [
+      {
+        "name": "APDetailID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "APHeadID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "ItemNumber",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "PartNumer",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "DateExpec",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "DateRecvd",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "Description",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "Price",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Received",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "Comment",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "QtyRecvd",
+        "type": "FLOAT",
+        "length": 4
+      },
+      {
+        "name": "Quantity",
+        "type": "FLOAT",
+        "length": 4
+      }
+    ]
+  },
+  {
+    "tableName": "tblAPHeader",
+    "columns": [
+      {
+        "name": "APHeadID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "VendorID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "PartNumber",
+        "type": "TEXT",
+        "length": 40
+      },
+      {
+        "name": "PONumber",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Expense Type",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "InvoiceNumber",
+        "type": "TEXT",
+        "length": 40
+      },
+      {
+        "name": "InvoiceDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "Amount",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "DueDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "Terms",
+        "type": "TEXT",
+        "length": 40
+      },
+      {
+        "name": "TaxDeductible",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "Comments",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "Paid",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Invoice Received",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "Items Received",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "SentToPAW",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "GLID",
+        "type": "TEXT",
+        "length": 44
+      },
+      {
+        "name": "GLAcct",
+        "type": "TEXT",
+        "length": 100
+      }
+    ]
+  },
+  {
+    "tableName": "tblAPPayments",
+    "columns": [
+      {
+        "name": "LineNo",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "APHeadID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "HowPaid",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "DatePaid",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "CHKNum",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "AmtPaid",
+        "type": "MONEY",
+        "length": 8
+      }
+    ]
+  },
+  {
+    "tableName": "tblAppointments",
+    "columns": [
+      {
+        "name": "AppointmentID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "CustomerID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "VehicleID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Tech",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "ApNotes",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "ApDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "ApTime",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "WaitDrop",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "EstTime",
+        "type": "TEXT",
+        "length": 100
+      }
+    ]
+  },
+  {
+    "tableName": "tblARPaymentDetail",
+    "columns": [
+      {
+        "name": "ARPayDetailID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "ARPayHeadID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "WorkorderID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Memo",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "InterestRate",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "ARDDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "AmtDueC",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Interest",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "AmtDue30",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "AmtDue60",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "AmtDue90",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "AmtDue90Plus",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "P1Acct",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Payment1",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "P1Date",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "ARPaymentType1",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "SentToQB1",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "P2Acct",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Payment2",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "P2Date",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "ARPaymentType2",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "SentToQB2",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "P3Acct",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Payment3",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "P3Date",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "ARPaymentType3",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "SentToQB3",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "P4Acct",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Payment4",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "P4Date",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "ARPaymentType4",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "SentToQB4",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "P5Acct",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Payment5",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "P5Date",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "ARPaymentType5",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "SentToQB5",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "P6Acct",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Payment6",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "P6Date",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "ARPaymentType6",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "SentToQB6",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "PaymentAmt",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "GLID",
+        "type": "TEXT",
+        "length": 44
+      }
+    ]
+  },
+  {
+    "tableName": "tblARPaymentHeader",
+    "columns": [
+      {
+        "name": "ARPayHeadID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "CustomerID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "ARHDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "AmtDue",
+        "type": "MONEY",
+        "length": 8
+      }
+    ]
+  },
+  {
+    "tableName": "tblCanedHeader",
+    "columns": [
+      {
+        "name": "CanedID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Desc",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Name",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Make",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Model",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "EarlyYear",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "LateYear",
+        "type": "LONG",
+        "length": 4
+      }
+    ]
+  },
+  {
+    "tableName": "tblCanedLabor",
+    "columns": [
+      {
+        "name": "LineNo",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "CanedID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "LaborTypeID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Description",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "EstTime",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "LaborType",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "LaborRate",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "LaborTotal",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "LaborTaxable",
+        "type": "BOOLEAN",
+        "length": 1
+      }
+    ]
+  },
+  {
+    "tableName": "tblCanedParts",
+    "columns": [
+      {
+        "name": "LineNo",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "CanedID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "PartID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "PartDescription",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "Quantity",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "Price",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "FET",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "CoreDep",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "CoreAveCost",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "HazWasteCharge",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "GroupID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "PartTaxable",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "CoreTaxable",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "HazWasTaxable",
+        "type": "BOOLEAN",
+        "length": 1
+      }
+    ]
+  },
+  {
+    "tableName": "tblCashDraw",
+    "columns": [
+      {
+        "name": "CashDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "Amount",
+        "type": "MONEY",
+        "length": 8
+      }
+    ]
+  },
+  {
+    "tableName": "tblCLinkTemp",
+    "columns": [
+      {
+        "name": "BeginDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "EndDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      }
+    ]
+  },
+  {
+    "tableName": "tblCRLabor",
+    "columns": [
+      {
+        "name": "LineNo",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "LaborID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Days",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Miles",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "AtWith",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Run",
+        "type": "BOOLEAN",
+        "length": 1
+      }
+    ]
+  },
+  {
+    "tableName": "tblCustomers",
+    "columns": [
+      {
+        "name": "CustomerID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "SourceID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "TypeID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "CompanyName",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "ContactLastName",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "ContactFirstName",
+        "type": "TEXT",
+        "length": 60
+      },
+      {
+        "name": "ContactSpouse",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Address",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "City",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "State",
+        "type": "TEXT",
+        "length": 40
+      },
+      {
+        "name": "PostalCode",
+        "type": "TEXT",
+        "length": 40
+      },
+      {
+        "name": "SCompanyName",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "SContactLastName",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "SContactFirstName",
+        "type": "TEXT",
+        "length": 60
+      },
+      {
+        "name": "SAddress",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "SCity",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "SState",
+        "type": "TEXT",
+        "length": 40
+      },
+      {
+        "name": "SPostalCode",
+        "type": "TEXT",
+        "length": 40
+      },
+      {
+        "name": "PhoneNumber",
+        "type": "TEXT",
+        "length": 60
+      },
+      {
+        "name": "PhoneExt",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "FaxNumber",
+        "type": "TEXT",
+        "length": 60
+      },
+      {
+        "name": "WorkPhone",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "WorkExt",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "PagerPhone",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "CellPhone",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "EmailAddr",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "CustBDay",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "SpouseBDay",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "DLNo",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "CustSince",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "ResaleNo",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "CheckApp",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "ChargeApp",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "CreditLim",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "InternalComments",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "DefaultPricing",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "TaxExempt",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "AirReminderSent",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "AirReminderDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "OilChangeSent",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "OilChangeDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "TuneUpSent",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "TuneUpDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "TransServiceSent",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "TransServiceDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "SmogSent",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "SmogDate",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "CustWarnings",
+        "type": "BOOLEAN",
+        "length": 1
+      }
+    ]
+  },
+  {
+    "tableName": "tblCustomersAlt",
+    "columns": [
+      {
+        "name": "AltCustomerID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "CustomerID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "VehicleID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "CompanyName",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "ContactLastName",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "ContactFirstName",
+        "type": "TEXT",
+        "length": 60
+      },
+      {
+        "name": "PhoneNumber",
+        "type": "TEXT",
+        "length": 60
+      }
+    ]
+  },
+  {
+    "tableName": "tblCustomerTypes",
+    "columns": [
+      {
+        "name": "TypeID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "TypeDesc",
+        "type": "TEXT",
+        "length": 100
+      }
+    ]
+  },
+  {
+    "tableName": "tblCWBankAccounts",
+    "columns": [
+      {
+        "name": "Bank Account Number",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Type",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Bank Name",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "ABA Number",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Street",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Suite",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "City",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "State/Province",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Zip/Postal Code",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Country",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Contact Name",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Phone Number",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Fax Number",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Starting Check Number",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "Last Bank Statement Date",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "Last Bank Statement Balance",
+        "type": "MONEY",
+        "length": 8
+      }
+    ]
+  },
+  {
+    "tableName": "tblCWCheckWriter",
+    "columns": [
+      {
+        "name": "Trans ID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Trans Type",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Account Number",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Check Number",
+        "type": "INT",
+        "length": 2
+      },
+      {
+        "name": "Check Date",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "Payee",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Payment Amount",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Deposit Amount",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Memo",
+        "type": "TEXT",
+        "length": 300
+      },
+      {
+        "name": "Cleared",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "Void",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "Print",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "Voucher",
+        "type": "MEMO",
+        "length": 0
+      }
+    ]
+  },
+  {
+    "tableName": "tblCWFirstTime",
+    "columns": [
+      {
+        "name": "First Time",
+        "type": "BOOLEAN",
+        "length": 1
+      }
+    ]
+  },
+  {
+    "tableName": "tblCWPayees",
+    "columns": [
+      {
+        "name": "Payees",
+        "type": "TEXT",
+        "length": 100
+      }
+    ]
+  },
+  {
+    "tableName": "tblCWPreferences",
+    "columns": [
+      {
+        "name": "Company Name",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Street",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Suite",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "City State Zip Code",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Phone Number",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Default Bank Account Number",
+        "type": "TEXT",
+        "length": 100
+      }
+    ]
+  },
+  {
+    "tableName": "tblCWTypeofAccount",
+    "columns": [
+      {
+        "name": "Type of Account",
+        "type": "TEXT",
+        "length": 40
+      }
+    ]
+  },
+  {
+    "tableName": "tblDeletedWorkOrders",
+    "columns": [
+      {
+        "name": "LineNo",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "WorkOrderID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Reason",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "DateDeleted",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "Login",
+        "type": "TEXT",
+        "length": 100
+      }
+    ]
+  },
+  {
+    "tableName": "tblEmployees",
+    "columns": [
+      {
+        "name": "EmployeeId",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "PayTypeID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Supervisor",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "SearchKey",
+        "type": "TEXT",
+        "length": 16
+      },
+      {
+        "name": "Firstname",
+        "type": "TEXT",
+        "length": 30
+      },
+      {
+        "name": "Middlename",
+        "type": "TEXT",
+        "length": 20
+      },
+      {
+        "name": "Lastname",
+        "type": "TEXT",
+        "length": 30
+      },
+      {
+        "name": "Addr1",
+        "type": "TEXT",
+        "length": 80
+      },
+      {
+        "name": "Addr2",
+        "type": "TEXT",
+        "length": 80
+      },
+      {
+        "name": "City",
+        "type": "TEXT",
+        "length": 50
+      },
+      {
+        "name": "State",
+        "type": "TEXT",
+        "length": 4
+      },
+      {
+        "name": "country",
+        "type": "TEXT",
+        "length": 10
+      },
+      {
+        "name": "Zip",
+        "type": "TEXT",
+        "length": 20
+      },
+      {
+        "name": "SSNNo",
+        "type": "TEXT",
+        "length": 18
+      },
+      {
+        "name": "OfficePhone",
+        "type": "TEXT",
+        "length": 40
+      },
+      {
+        "name": "Officephone/fax",
+        "type": "TEXT",
+        "length": 40
+      },
+      {
+        "name": "Officephone/data",
+        "type": "TEXT",
+        "length": 40
+      },
+      {
+        "name": "HomePhone",
+        "type": "TEXT",
+        "length": 40
+      },
+      {
+        "name": "SexMale",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "BirthDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "HireDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "TerminationDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "LastReview",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "NextReview",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "EmergNotify",
+        "type": "TEXT",
+        "length": 200
+      },
+      {
+        "name": "Pay",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "EEOClass",
+        "type": "INT",
+        "length": 2
+      },
+      {
+        "name": "CurrentStatus",
+        "type": "TEXT",
+        "length": 16
+      },
+      {
+        "name": "Comments",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "Active",
+        "type": "BOOLEAN",
+        "length": 1
+      }
+    ]
+  },
+  {
+    "tableName": "tblEmpTimeClock",
+    "columns": [
+      {
+        "name": "LineNo",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "EmployeeID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "TransDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "Clockin",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "ClockOut",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "TransTypeID",
+        "type": "LONG",
+        "length": 4
+      }
+    ]
+  },
+  {
+    "tableName": "tblEmpTransType",
+    "columns": [
+      {
+        "name": "TransTypeID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "TransType",
+        "type": "TEXT",
+        "length": 100
+      }
+    ]
+  },
+  {
+    "tableName": "tblEngines",
+    "columns": [
+      {
+        "name": "EngDesc",
+        "type": "TEXT",
+        "length": 100
+      }
+    ]
+  },
+  {
+    "tableName": "tblGLChartofAccounts",
+    "columns": [
+      {
+        "name": "ID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Account Type",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "Group Type",
+        "type": "TEXT",
+        "length": 2
+      },
+      {
+        "name": "Group Sequence",
+        "type": "BYTE",
+        "length": 1
+      },
+      {
+        "name": "Account",
+        "type": "TEXT",
+        "length": 16
+      },
+      {
+        "name": "Account Description",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Sub Account",
+        "type": "TEXT",
+        "length": 16
+      },
+      {
+        "name": "Sub Account Description",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Beginning Balance",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Notes",
+        "type": "MEMO",
+        "length": 0
+      }
+    ]
+  },
+  {
+    "tableName": "tblGLChartofAccountTypes",
+    "columns": [
+      {
+        "name": "Account Type Num",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "Account Type",
+        "type": "TEXT",
+        "length": 40
+      }
+    ]
+  },
+  {
+    "tableName": "tblGLPreferences",
+    "columns": [
+      {
+        "name": "Company Name",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Slogan",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Street",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Suite",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "City State Zip Code",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Phone Number",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Fax Number",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Fed Tax ID",
+        "type": "TEXT",
+        "length": 30
+      },
+      {
+        "name": "Maximize on 640",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "Reg",
+        "type": "TEXT",
+        "length": 100
+      }
+    ]
+  },
+  {
+    "tableName": "tblGLReportGroups",
+    "columns": [
+      {
+        "name": "ID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Account Type",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "Group Type",
+        "type": "TEXT",
+        "length": 2
+      },
+      {
+        "name": "Group Name",
+        "type": "TEXT",
+        "length": 100
+      }
+    ]
+  },
+  {
+    "tableName": "tblGLReportList",
+    "columns": [
+      {
+        "name": "Report Category",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Report Name",
+        "type": "TEXT",
+        "length": 150
+      },
+      {
+        "name": "Query Name",
+        "type": "TEXT",
+        "length": 150
+      },
+      {
+        "name": "Description",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "Date Selectors",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "Category Selectors",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "Image",
+        "type": "OLE",
+        "length": 0
+      },
+      {
+        "name": "ReportNameDesc",
+        "type": "TEXT",
+        "length": 100
+      }
+    ]
+  },
+  {
+    "tableName": "tblGLTransactions",
+    "columns": [
+      {
+        "name": "Transaction ID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "GL ID",
+        "type": "TEXT",
+        "length": 44
+      },
+      {
+        "name": "Date Time Stamp",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "Account ID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "GLDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "Debit",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Credit",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Source",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Operation",
+        "type": "TEXT",
+        "length": 510
+      }
+    ]
+  },
+  {
+    "tableName": "tblGLTransactionsArchive",
+    "columns": [
+      {
+        "name": "Transaction ID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "GL ID",
+        "type": "TEXT",
+        "length": 44
+      },
+      {
+        "name": "Date Time Stamp",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "Account ID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "GLDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "Debit",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Credit",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Source",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Operation",
+        "type": "TEXT",
+        "length": 100
+      }
+    ]
+  },
+  {
+    "tableName": "tblInternalReminders",
+    "columns": [
+      {
+        "name": "ReminderID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "EmpID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "IRNotes",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "IRDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "IRTime",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      }
+    ]
+  },
+  {
+    "tableName": "tblLaborTrackTypes",
+    "columns": [
+      {
+        "name": "LaborTrackID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "LaborDesc",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Account",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "LaborRate",
+        "type": "MONEY",
+        "length": 8
+      }
+    ]
+  },
+  {
+    "tableName": "tblLaborTypes",
+    "columns": [
+      {
+        "name": "LaborTypeID",
+        "type": "TEXT",
+        "length": 12
+      },
+      {
+        "name": "LaborTrackID",
+        "type": "TEXT",
+        "length": 30
+      },
+      {
+        "name": "Title",
+        "type": "TEXT",
+        "length": 80
+      },
+      {
+        "name": "Desciption",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "LaborRateA",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "LaborRateB",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "LaborRateC",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "LaborRateD",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Taxable",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "Hours",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "LTotal",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Update",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "CLinkCode",
+        "type": "LONG",
+        "length": 4
+      }
+    ]
+  },
+  {
+    "tableName": "tblMakes",
+    "columns": [
+      {
+        "name": "MakeID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Make",
+        "type": "TEXT",
+        "length": 510
+      }
+    ]
+  },
+  {
+    "tableName": "tblMCI",
+    "columns": [
+      {
+        "name": "SetupID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "SalesTaxRate",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "SalesTaxRate2",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "CompanyName",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Address",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "City",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "StateOrProvince",
+        "type": "TEXT",
+        "length": 40
+      },
+      {
+        "name": "PostalCode",
+        "type": "TEXT",
+        "length": 40
+      },
+      {
+        "name": "Country",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "PhoneNumber",
+        "type": "TEXT",
+        "length": 60
+      },
+      {
+        "name": "FaxNumber",
+        "type": "TEXT",
+        "length": 60
+      },
+      {
+        "name": "DefaultPaymentTerms",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "DefaultInvoiceDescription",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "Estimate",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "Invoice",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "Extra",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "Warranty",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "Warranty2",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "OCDisclaimer",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "DefaultMiles",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Warranty3",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "DefaultMonths",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "PartsDisclaimer",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "NoWork",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "NoWork2",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "ImportantNotice",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "ReportFontSize",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "HeaderFont",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "DisclaimFont",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Done",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "Reg",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "UserID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "BarNumber",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "EPANumber",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "TParts",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "TLabor",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "TCores",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "PMarkUp",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "LogoLocation",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "HasLogo",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "UseSec",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "DefInvoice",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "SortOpenWO",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "SortOpenEst",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "UseSurChargePercent",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "UseSurChargeAmt",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "SurChargePercent",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "SurChargeAmt",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "SurChargeMax",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "UseDefaultMarkup",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "DefaultMarkup",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "InventoryWarning",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "UseShopCharge",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "ShopChargeType",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "ShowShopCharge",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "HaveShopMaxLimit",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "ShopMaxLimit",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "ShopIncludeParts",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "ShopIncludeLabor",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "ShopPartsTaxCharge",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "ShopLaborTaxCharge",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "ShopPercent",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "ShopAmout",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "ShowHT",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "ShowPM",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "ShowNumType",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "ShowHazAs",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "ShowFET",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "ShowEPA",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "ShowBarNumber",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "ShowHRSTotal",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "PrintSublet",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "UseMileOut",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "UseBarNumber",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "BarAlt",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "DefPrint",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "PartAutoMarkUp",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "HaveCInvoice",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "CInvoiceName",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "ShowTips",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "PrintHeader",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "MultPrinters",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "RecordIntPart",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "PrtEstRev",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "HeaderFontSize",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "UseCash",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "PrntSig",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "PrntBk",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "MultComp",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "IntPartPull",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "Align",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Balance",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Valve",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "DefBkpDrv",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "DefLRateA",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "DefLRateB",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "DefLRateC",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "DefLRateD",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "RefundTCores",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "LaborTaxRate1",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "LaborTaxRate2",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "THazWas",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "Updated",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "RelInvQuickEst",
+        "type": "BOOLEAN",
+        "length": 1
+      }
+    ]
+  },
+  {
+    "tableName": "tblMCIAcct",
+    "columns": [
+      {
+        "name": "SetupID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "AcctWOParts",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "AcctWOPartsCOG",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "AcctWOLabor",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "AcctWOLaborCOG",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "AcctWOSublet",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "AcctWOSubletCOG",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "AcctWOFET",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "AcctWOCore",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "AcctWOHaz",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "AcctWOShop",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "AcctWOTax",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "AcctWODiscount",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "AcctWOTotal",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "AcctAPDebit",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "AcctAPCredit",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "AcctARDebit",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "AcctARCredit",
+        "type": "TEXT",
+        "length": 100
+      }
+    ]
+  },
+  {
+    "tableName": "tblMCIBkp",
+    "columns": [
+      {
+        "name": "SetupID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "KeepRotating",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "SUN",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "MON",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "TUE",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "WED",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "THU",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "FRI",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "SAT",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      }
+    ]
+  },
+  {
+    "tableName": "tblMCIInterface",
+    "columns": [
+      {
+        "name": "SetupID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "QQ",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "AllData",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "ADNote",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "ASCIIMate",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "QBChecking",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "QBAR",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "QBInvenAsset",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "QBLaborIncome",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "QBInvenIncome",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "QBSubletIncome",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "QBHazIncome",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "QBSSIncome",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "QBOtherIncome",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "QBLaborCosts",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "QBInvenCosts",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "QBSubletCosts",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "QBHazCosts",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "QBSSCosts",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "QBOtherCosts",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "QBTaxesPaid",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "MitchellDrive",
+        "type": "TEXT",
+        "length": 100
+      }
+    ]
+  },
+  {
+    "tableName": "tblMCIMarketing",
+    "columns": [
+      {
+        "name": "LineNo",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "SetUpID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "TxtPostCardTune",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "TxtPostCardOil",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "TxtPostCardSmogCheck",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "TxtPostCardAirCond",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "TxtPostCardTrans",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "TxtPostCardGeneral",
+        "type": "MEMO",
+        "length": 0
+      }
+    ]
+  },
+  {
+    "tableName": "tblModels",
+    "columns": [
+      {
+        "name": "ModelID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "MakeID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Model",
+        "type": "TEXT",
+        "length": 510
+      }
+    ]
+  },
+  {
+    "tableName": "tblPartGroup",
+    "columns": [
+      {
+        "name": "GroupID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Upadate",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "Description",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "UseMarkup",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "Min1",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Max1",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Percent1",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "Min2",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Max2",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Percent2",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "Min3",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Max3",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Percent3",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "Min4",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Max4",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Percent4",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "Min5",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Max5",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Percent5",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "BPrice",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "CPrice",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "DPrice",
+        "type": "DOUBLE",
+        "length": 8
+      }
+    ]
+  },
+  {
+    "tableName": "tblParts",
+    "columns": [
+      {
+        "name": "PartID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "VedorID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "GroupID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "PartDescription",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "Line",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Class",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Weight",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Location",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "ProdCode",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "SKUNo",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Stock",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "BestQuan",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "MinQuan",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "ReorderQuan",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "OnHand",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "Received",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "NUR",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "HazWaste",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "FET",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "CoreDep",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "CoreAveCost",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "ReturnableCore",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "UnitPrice",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "RetailPrice",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "PartTaxable",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "CoreTaxable",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "Update",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "Comments",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "RetailPriceB",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "RetailPriceC",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "RetailPriceD",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "PUYear",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "PUMake",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "PUModel",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "IsTire",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "TireSize",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "HazWasTaxable",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "StockNotify",
+        "type": "BOOLEAN",
+        "length": 1
+      }
+    ]
+  },
+  {
+    "tableName": "tblPartsAlt",
+    "columns": [
+      {
+        "name": "LineNo",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "PartID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "AltNumber",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "SKUNumber",
+        "type": "TEXT",
+        "length": 100
+      }
+    ]
+  },
+  {
+    "tableName": "tblPartsAltVendors",
+    "columns": [
+      {
+        "name": "LineNo",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "PartNumber",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "VendorID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Cost",
+        "type": "MONEY",
+        "length": 8
+      }
+    ]
+  },
+  {
+    "tableName": "tblPartsCatUsage",
+    "columns": [
+      {
+        "name": "LineNo",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "PartNumber",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "EarlyYear",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "LateYear",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Make",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Model",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Comments",
+        "type": "TEXT",
+        "length": 100
+      }
+    ]
+  },
+  {
+    "tableName": "tblPartsKits",
+    "columns": [
+      {
+        "name": "ID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "PartNumber",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "KitPartNumber",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "Quantity",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "UsePart",
+        "type": "BOOLEAN",
+        "length": 1
+      }
+    ]
+  },
+  {
+    "tableName": "tblPayments",
+    "columns": [
+      {
+        "name": "PaymentID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "WorkorderID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "PaymentTermsID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "PaymentAmount",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "PaymentDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "CreditCardNumber",
+        "type": "TEXT",
+        "length": 60
+      },
+      {
+        "name": "CardholdersName",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "CreditCardExpDate",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "CheckNumber",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Payment1",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "QB1",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "Payment2",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "PaymentTermsID2",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "QB2",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "PDate2",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "P2Acct",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Payment3",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "PaymentTermsID3",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "QB3",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "PDate3",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "P3Acct",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Payment4",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "PaymentTermsID4",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "QB4",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "PDate4",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "P4Acct",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Payment5",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "PaymentTermsID5",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "QB5",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "PDate5",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "P5Acct",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Payment6",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "PaymentTermsID6",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "QB6",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "PDate6",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "P6Acct",
+        "type": "TEXT",
+        "length": 100
+      }
+    ]
+  },
+  {
+    "tableName": "tblPRPayType",
+    "columns": [
+      {
+        "name": "PayTypeID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "PayDesc",
+        "type": "TEXT",
+        "length": 40
+      },
+      {
+        "name": "ShortName",
+        "type": "TEXT",
+        "length": 16
+      },
+      {
+        "name": "Frequency",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "HoursPerUnit",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "SysPayType",
+        "type": "INT",
+        "length": 2
+      },
+      {
+        "name": "W2BoxCode",
+        "type": "INT",
+        "length": 2
+      },
+      {
+        "name": "OTEnabled",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "OTQuantity",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "OTRate",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "OTPayTypeID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "DefaultExpAcct",
+        "type": "LONG",
+        "length": 4
+      }
+    ]
+  },
+  {
+    "tableName": "tblQELabor",
+    "columns": [
+      {
+        "name": "EstimateLaborID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "EstimateID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "LaborTypeID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Description",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "EstTime",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "LaborType",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "LaborRate",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "LaborTotal",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "LaborTaxable",
+        "type": "BOOLEAN",
+        "length": 1
+      }
+    ]
+  },
+  {
+    "tableName": "tblQEParts",
+    "columns": [
+      {
+        "name": "EstimatePartID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "EstimateID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "PartID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "PartDescription",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "Quantity",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "Price",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Cost",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "CoreDep",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "HazWasteCharge",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "FET",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "PartTaxable",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "CoreTaxable",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "GroupID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "VendorID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "PartPONumber",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "HazWasTaxable",
+        "type": "BOOLEAN",
+        "length": 1
+      }
+    ]
+  },
+  {
+    "tableName": "tblQEstimate",
+    "columns": [
+      {
+        "name": "EstimateID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "ECustomerID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "DateReceived",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "DateRequired",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "VehicleMilage",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Problem",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "NoWorkAmt",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "SalesTaxRate",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "Type",
+        "type": "TEXT",
+        "length": 40
+      },
+      {
+        "name": "Search",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "SalesTaxRate2",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "LaborTaxRate1",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "LaborTaxRate2",
+        "type": "DOUBLE",
+        "length": 8
+      }
+    ]
+  },
+  {
+    "tableName": "tblQEstimateCustomers",
+    "columns": [
+      {
+        "name": "ECustomerID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "CompanyName",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "ContactLastName",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "ContactFirstName",
+        "type": "TEXT",
+        "length": 60
+      },
+      {
+        "name": "ContactSpouse",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Address",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "City",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "State",
+        "type": "TEXT",
+        "length": 40
+      },
+      {
+        "name": "PostalCode",
+        "type": "TEXT",
+        "length": 40
+      },
+      {
+        "name": "PhoneNumber",
+        "type": "TEXT",
+        "length": 60
+      },
+      {
+        "name": "PhoneExt",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "FaxNumber",
+        "type": "TEXT",
+        "length": 60
+      },
+      {
+        "name": "WorkPhone",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "WorkExt",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "PagerPhone",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "CellPhone",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "CustSince",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "Make",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Model",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Year",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "License",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "LicState",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "ManufactureDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "VehicleTagID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Vin",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Color",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Engine",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Trans",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "DriveAxel",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "AirCond",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "SCustomerID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "SVehicleID",
+        "type": "LONG",
+        "length": 4
+      }
+    ]
+  },
+  {
+    "tableName": "tblReminders",
+    "columns": [
+      {
+        "name": "ReminderID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "ReminderName",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "DefaultDays",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "DefaultMiles",
+        "type": "LONG",
+        "length": 4
+      }
+    ]
+  },
+  {
+    "tableName": "tblRemindersSet",
+    "columns": [
+      {
+        "name": "LineNo",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "ReminderID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "CustomerID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "VehicleID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "DateFinished",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "DateDue",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "Mileage",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Sent",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "DateSent",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      }
+    ]
+  },
+  {
+    "tableName": "tblSec",
+    "columns": [
+      {
+        "name": "LineNo",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "SecUserID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "SecHeadID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "SecItemID",
+        "type": "INT",
+        "length": 2
+      },
+      {
+        "name": "Access",
+        "type": "BOOLEAN",
+        "length": 1
+      }
+    ]
+  },
+  {
+    "tableName": "tblSecUsers",
+    "columns": [
+      {
+        "name": "SecUserID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "SecUser",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "SecPassoword",
+        "type": "TEXT",
+        "length": 100
+      }
+    ]
+  },
+  {
+    "tableName": "tblSourceofCustomer",
+    "columns": [
+      {
+        "name": "SourceID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "SourceOfCustomer",
+        "type": "TEXT",
+        "length": 100
+      }
+    ]
+  },
+  {
+    "tableName": "tblSpell",
+    "columns": [
+      {
+        "name": "WordID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Word",
+        "type": "TEXT",
+        "length": 510
+      }
+    ]
+  },
+  {
+    "tableName": "tblStandardRecommendations",
+    "columns": [
+      {
+        "name": "RecID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "RecTitle",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "RecDetail",
+        "type": "MEMO",
+        "length": 0
+      }
+    ]
+  },
+  {
+    "tableName": "tblStartingNumbers",
+    "columns": [
+      {
+        "name": "NumberID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Workorders",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Estimates",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Vehicles",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Employees",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Customers",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "QQNumbers",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "OCSales",
+        "type": "LONG",
+        "length": 4
+      }
+    ]
+  },
+  {
+    "tableName": "tblTables",
+    "columns": [
+      {
+        "name": "ImportName",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "TableNameLocal",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "TableNameRemote",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "TableDbRemote",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "TablePathRemote",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "TableFullPath",
+        "type": "TEXT",
+        "length": 100
+      }
+    ]
+  },
+  {
+    "tableName": "tblTempPartLeft",
+    "columns": [
+      {
+        "name": "LineNo",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "PartID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "LeftInStock",
+        "type": "DOUBLE",
+        "length": 8
+      }
+    ]
+  },
+  {
+    "tableName": "tblTempPartsInUse",
+    "columns": [
+      {
+        "name": "LineNo",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "PartID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "WorkOrderID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "WOPartID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Quantity",
+        "type": "DOUBLE",
+        "length": 8
+      }
+    ]
+  },
+  {
+    "tableName": "tblTypeofPayment",
+    "columns": [
+      {
+        "name": "PaymentTermsID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "TypeofPayment",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "DiscountPercent",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "DiscountDays",
+        "type": "INT",
+        "length": 2
+      },
+      {
+        "name": "Days",
+        "type": "INT",
+        "length": 2
+      },
+      {
+        "name": "UseWithAR",
+        "type": "BOOLEAN",
+        "length": 1
+      }
+    ]
+  },
+  {
+    "tableName": "tblVehicles",
+    "columns": [
+      {
+        "name": "Vehicle ID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "CustomerID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Make",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Model",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Year",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "License",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "LicState",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "ManufactureDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "VehicleTagID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Vin",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Color",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Engine",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Trans",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "DriveAxel",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "AirCond",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "Comments",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "AveDMileage",
+        "type": "LONG",
+        "length": 4
+      }
+    ]
+  },
+  {
+    "tableName": "tblVehicleTrans",
+    "columns": [
+      {
+        "name": "TransID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "TransDesc",
+        "type": "TEXT",
+        "length": 100
+      }
+    ]
+  },
+  {
+    "tableName": "tblVendors",
+    "columns": [
+      {
+        "name": "VendorID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "PaytermsID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "AcctID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "LookupCode",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "CompanyName",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "FirstName",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "LastName",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Address",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "City",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "State",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Zip",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Phone",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Fax",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "email",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "ContactName",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "DateStarted",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "FedTaxNo",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "StateTaxNo",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "LastCrg",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "AmtLastCrg",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "LastPayment",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "AmtLastPayment",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "CreditLimit",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Comments",
+        "type": "MEMO",
+        "length": 0
+      }
+    ]
+  },
+  {
+    "tableName": "tblWOEstRev",
+    "columns": [
+      {
+        "name": "LineNo",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "WorkorderID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "ContactHow",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "OrigAmt",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "RevisedAmt",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "RevisedDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "RevisedTime",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "ApprovedBy",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Phone",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "RevReason",
+        "type": "TEXT",
+        "length": 510
+      }
+    ]
+  },
+  {
+    "tableName": "tblWOLabor",
+    "columns": [
+      {
+        "name": "LaborID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "WorkOrderID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "LaborTypeID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "EmployeeID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Description",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "EstTime",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "ActualTime",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "LaborType",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "LaborRate",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "LaborTotal",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "LaborTaxable",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "LWarranty",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "StartTime",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "StopTime",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "POrder",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "LaborSent",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "DateSent",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "LaborSent2",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "DateSent2",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "LaborSent3",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "DateSent3",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "LComp",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "LCompDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      }
+    ]
+  },
+  {
+    "tableName": "tblWOLaborEmpTime",
+    "columns": [
+      {
+        "name": "LineNo",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "WOLaborID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "EmployeeID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "TransDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "StartTime",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "StopTime",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "ClkHrs",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "Notes",
+        "type": "TEXT",
+        "length": 510
+      }
+    ]
+  },
+  {
+    "tableName": "tblWOParts",
+    "columns": [
+      {
+        "name": "WorkOrderPartID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "WorkOrderID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "PartID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "PartDescription",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "Quantity",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "Price",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Cost",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "CoreAveCost",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "CoreDep",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "HazWasteCharge",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "FET",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "PartTaxable",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "CoreTaxable",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "GroupID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "VendorID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "PartPONumber",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "PWarranty",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "EmployeeID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "POrder",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Return",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "ReturnLocation",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "IsTire",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "TireSize",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "PComp",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "PCompDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "WOLaborID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "RefundTCores",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "IncludeCore",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "CoreCheck",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "HazWasTaxable",
+        "type": "BOOLEAN",
+        "length": 1
+      }
+    ]
+  },
+  {
+    "tableName": "tblWorkorders",
+    "columns": [
+      {
+        "name": "WorkorderID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "CustomerID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "VehicleID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "EmployeeID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "PurchaseOrderNumber",
+        "type": "TEXT",
+        "length": 60
+      },
+      {
+        "name": "DateReceived",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "DateRequired",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "VehicleMilage",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "VehicleMilageOut",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Recomandation",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "Problem",
+        "type": "MEMO",
+        "length": 0
+      },
+      {
+        "name": "DateFinished",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "DatePickedUp",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "SalesTaxRate",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "SalesTaxRate2",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "PartsDisc",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "LaborDisc",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "Type",
+        "type": "TEXT",
+        "length": 40
+      },
+      {
+        "name": "CannedID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Inprogress",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "Status",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "TaxExempt",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "WWarranty",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "WMiles",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "WMonths",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "NoWorkAmt",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "ShopCharge",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "ShopApplied",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "RevisedAmt1",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "RevisedDate1",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "RevisedTime1",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "ApprovedBy1",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Phone1",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "RevisedAmt2",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "RevisedDate2",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "RevisedTime2",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "ApprovedBy2",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Phone2",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "RevisedAmt3",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "RevisedDate3",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "RevisedTime3",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "ApprovedBy3",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Phone3",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "RevisedAmt4",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "RevisedDate4",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "RevisedTime4",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "ApprovedBy4",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Phone4",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "RevisedAmt5",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "RevisedDate5",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "RevisedTime5",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "ApprovedBy5",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Phone5",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "RevisedAmt6",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "RevisedDate6",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "RevisedTime6",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "ApprovedBy6",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Phone6",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "WOTotal",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "WOSubTotal",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "WOPartsTotal",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "WOLaborTotal",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "WOShopTotal",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "WOCoreDep",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "WOHazard",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "WOTFET",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "WOTax",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "WOTax2",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "WONonTax",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "WOSmogChk",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "WOSmogCert",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "WOOilAnt",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "WOSublet",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "WOSubletTotal",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "WODisc",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "WODiscNonT",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "WODiscT",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "SentToQB",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "AirReminderSent",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "AirReminderDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "OilChangeSent",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "OilChangeDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "TuneUpSent",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "TuneUpDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "TransServiceSent",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "TransServiceDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "SmogSent",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "SmogDate",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "RecSent",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "RecDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "Custom",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "CustomType",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "CustomDate",
+        "type": "SHORT_DATE_TIME",
+        "length": 8
+      },
+      {
+        "name": "VehRec",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "AltCustomerID",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "SentToPeach",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "SendToCLink",
+        "type": "BOOLEAN",
+        "length": 1
+      },
+      {
+        "name": "GLID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "LaborTaxRate1",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "LaborTaxRate2",
+        "type": "DOUBLE",
+        "length": 8
+      },
+      {
+        "name": "WOSTax1",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "WOSTax2",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "WOLTax1",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "WOLTax2",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "DoNotPrintPartNumbers",
+        "type": "BOOLEAN",
+        "length": 1
+      }
+    ]
+  },
+  {
+    "tableName": "tblWOSafe",
+    "columns": [
+      {
+        "name": "WorkOrderID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "RFTread",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "LFTread",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "RRTread",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "LRTread",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "SpareTread",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "RFPSI",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "LFPSI",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "RRPSI",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "LRPSI",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "SparePSI",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "BrkF",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "BrkR",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Battery",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Coolant",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "ChassisLube",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "AirFilter",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "TransFluid",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "DiffAxelFluid",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "PSFluid",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "WasherFluid",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "BrkFluid",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "BatteryWater",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Wipers",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "BeltsHoses",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Carwash",
+        "type": "TEXT",
+        "length": 100
+      }
+    ]
+  },
+  {
+    "tableName": "tblWOSublet",
+    "columns": [
+      {
+        "name": "LineNo",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "WorkOrderID",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "SubletCompany",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "SubletDesc",
+        "type": "TEXT",
+        "length": 510
+      },
+      {
+        "name": "SubletCost",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "SubletSell",
+        "type": "MONEY",
+        "length": 8
+      },
+      {
+        "name": "Taxable",
+        "type": "BOOLEAN",
+        "length": 1
+      }
+    ]
+  },
+  {
+    "tableName": "tblZipCodes",
+    "columns": [
+      {
+        "name": "Zip",
+        "type": "TEXT",
+        "length": 40
+      },
+      {
+        "name": "City",
+        "type": "TEXT",
+        "length": 36
+      },
+      {
+        "name": "State",
+        "type": "TEXT",
+        "length": 4
+      },
+      {
+        "name": "StateName",
+        "type": "TEXT",
+        "length": 50
+      }
+    ]
+  },
+  {
+    "tableName": "Veh",
+    "columns": [
+      {
+        "name": "APAA",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Year",
+        "type": "TEXT",
+        "length": 8
+      },
+      {
+        "name": "MakeCode",
+        "type": "LONG",
+        "length": 4
+      },
+      {
+        "name": "Make",
+        "type": "TEXT",
+        "length": 60
+      },
+      {
+        "name": "Model",
+        "type": "TEXT",
+        "length": 100
+      },
+      {
+        "name": "Engine",
+        "type": "TEXT",
+        "length": 150
+      }
+    ]
+  }
+]

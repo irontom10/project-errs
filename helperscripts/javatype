@@ -1,0 +1,239 @@
+// === Java Field Declarations ===
+@Id
+@Column(length = 100)
+private String workorderID;
+
+private Long customerID;
+
+private Long vehicleID;
+
+@Column(length = 100)
+private String employeeID;
+
+@Column(length = 60)
+private String purchaseOrderNumber;
+
+private LocalDateTime dateReceived;
+
+private LocalDateTime dateRequired;
+
+private Long vehicleMilage;
+
+private Long vehicleMilageOut;
+
+@Lob
+private String recomandation;
+
+@Lob
+private String problem;
+
+private LocalDateTime dateFinished;
+
+private LocalDateTime datePickedUp;
+
+private Double salesTaxRate;
+
+private Double salesTaxRate2;
+
+private Double partsDisc;
+
+private Double laborDisc;
+
+@Column(length = 40)
+private String type;
+
+private Long cannedID;
+
+private Boolean inprogress;
+
+@Column(length = 100)
+private String status;
+
+private Boolean taxExempt;
+
+private Boolean wWarranty;
+
+private Long wMiles;
+
+private Long wMonths;
+
+private BigDecimal noWorkAmt;
+
+private BigDecimal shopCharge;
+
+private Boolean shopApplied;
+
+private BigDecimal revisedAmt1;
+
+private LocalDateTime revisedDate1;
+
+private LocalDateTime revisedTime1;
+
+@Column(length = 100)
+private String approvedBy1;
+
+@Column(length = 100)
+private String phone1;
+
+private BigDecimal revisedAmt2;
+
+private LocalDateTime revisedDate2;
+
+private LocalDateTime revisedTime2;
+
+@Column(length = 100)
+private String approvedBy2;
+
+@Column(length = 100)
+private String phone2;
+
+private BigDecimal revisedAmt3;
+
+private LocalDateTime revisedDate3;
+
+private LocalDateTime revisedTime3;
+
+@Column(length = 100)
+private String approvedBy3;
+
+@Column(length = 100)
+private String phone3;
+
+private BigDecimal revisedAmt4;
+
+private LocalDateTime revisedDate4;
+
+private LocalDateTime revisedTime4;
+
+@Column(length = 100)
+private String approvedBy4;
+
+@Column(length = 100)
+private String phone4;
+
+private BigDecimal revisedAmt5;
+
+private LocalDateTime revisedDate5;
+
+private LocalDateTime revisedTime5;
+
+@Column(length = 100)
+private String approvedBy5;
+
+@Column(length = 100)
+private String phone5;
+
+private BigDecimal revisedAmt6;
+
+private LocalDateTime revisedDate6;
+
+private LocalDateTime revisedTime6;
+
+@Column(length = 100)
+private String approvedBy6;
+
+@Column(length = 100)
+private String phone6;
+
+private BigDecimal wOTotal;
+
+private BigDecimal wOSubTotal;
+
+private BigDecimal wOPartsTotal;
+
+private BigDecimal wOLaborTotal;
+
+private BigDecimal wOShopTotal;
+
+private BigDecimal wOCoreDep;
+
+private BigDecimal wOHazard;
+
+private BigDecimal wOTFET;
+
+private BigDecimal wOTax;
+
+private BigDecimal wOTax2;
+
+private BigDecimal wONonTax;
+
+private BigDecimal wOSmogChk;
+
+private BigDecimal wOSmogCert;
+
+private BigDecimal wOOilAnt;
+
+private BigDecimal wOSublet;
+
+private BigDecimal wOSubletTotal;
+
+private BigDecimal wODisc;
+
+private BigDecimal wODiscNonT;
+
+private BigDecimal wODiscT;
+
+private Boolean sentToQB;
+
+private Boolean airReminderSent;
+
+private LocalDateTime airReminderDate;
+
+private Boolean oilChangeSent;
+
+private LocalDateTime oilChangeDate;
+
+private Boolean tuneUpSent;
+
+private LocalDateTime tuneUpDate;
+
+private Boolean transServiceSent;
+
+private LocalDateTime transServiceDate;
+
+private Boolean smogSent;
+
+@Column(length = 100)
+private String smogDate;
+
+private Boolean recSent;
+
+private LocalDateTime recDate;
+
+private Boolean custom;
+
+@Column(length = 100)
+private String customType;
+
+private LocalDateTime customDate;
+
+private Boolean vehRec;
+
+private Long altCustomerID;
+
+private Boolean sentToPeach;
+
+private Boolean sendToCLink;
+
+@Column(length = 100)
+private String gLID;
+
+private Double laborTaxRate1;
+
+private Double laborTaxRate2;
+
+private BigDecimal wOSTax1;
+
+private BigDecimal wOSTax2;
+
+private BigDecimal wOLTax1;
+
+private BigDecimal wOLTax2;
+
+private Boolean doNotPrintPartNumbers;
+
+
+// === Full Constructor ===
+public Workorder(
+) {
+}
