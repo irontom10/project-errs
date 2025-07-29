@@ -1,38 +1,24 @@
 package net.errs.ProjectErrs.Service;
 
-import net.errs.ProjectErrs.Model.Customer;
-import net.errs.ProjectErrs.Repo.CustomerRepository;
-import org.springframework.stereotype.Service;
-
-import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
+
+import net.errs.ProjectErrs.Model.tblCustomers;
+import net.errs.ProjectErrs.Repository.CustomerRepository;
+import org.springframework.stereotype.Service;
 
 @Service
 public class CustomerService {
-
-    private final CustomerRepository customerRepository;
-
-    public CustomerService(CustomerRepository customerRepository) {
-        this.customerRepository = customerRepository;
+    private final CustomerRepository customerRepo;
+    public CustomerService(CustomerRepository repo) {
+        this.customerRepo = repo;
     }
 
-    public List<Customer> getAllCustomers() throws IOException {
-        return customerRepository.getAllCustomers();
+    public List<tblCustomers> getAllCustomers() {
+        return customerRepo.findAll();
     }
 
-    public Customer getCustomerById(Long id) throws IOException {
-        return customerRepository.getCustomerById(id);
-    }
-
-    public void createCustomer(Customer customer) throws IOException {
-        customerRepository.insertCustomer(customer);
-    }
-
-    public boolean updateCustomer(Long id, Customer customer) throws IOException {
-        return customerRepository.updateCustomer(id, customer);
-    }
-
-    public boolean deleteCustomer(Long id) throws IOException {
-        return customerRepository.deleteCustomer(id);
+    public Optional<tblCustomers> getCustomerById(Long id) {
+        return customerRepo.findById(id);
     }
 }
