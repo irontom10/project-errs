@@ -1,0 +1,115 @@
+<main id="main" th:fragment="content" xmlns:hx="http://www.w3.org/1999/xhtml">
+  <h1 class="text-center mb-6">Dashboard</h1>
+
+  <menu>
+
+    <button hx-get="/workorders"
+            hx-target="#main"
+            hx-swap="outerHTML"
+            hx-push-url="true"
+            hx-trigger="click"
+            preload="mouseover">
+      Work Orders / Estimates
+    </button>
+
+    <button hx-get="/canned-jobs"
+            hx-target="#main"
+            hx-swap="outerHTML"
+            hx-push-url="true"
+            hx-trigger="click"
+            preload="mouseover">
+      Canned Jobs Maintenance
+    </button>
+
+    <button hx-get="/employees"
+            hx-target="#main"
+            hx-swap="outerHTML"
+            hx-push-url="true"
+            hx-trigger="click"
+            preload="mouseover">
+      Employee Maintenance
+    </button>
+
+    <button hx-get="/customers"
+            hx-target="#main"
+            hx-swap="outerHTML"
+            hx-push-url="true"
+            hx-trigger="click"
+            preload="mouseover">
+      Customer Maintenance
+    </button>
+
+    <button hx-get="/accounting"
+            hx-target="#main"
+            hx-swap="outerHTML"
+            hx-push-url="true"
+            hx-trigger="click"
+            preload="mouseover">
+      Accounting Detail
+    </button>
+
+    <button hx-get="/vendors"
+            hx-target="#main"
+            hx-swap="outerHTML"
+            hx-push-url="true"
+            hx-trigger="click"
+            preload="mouseover">
+      Vendor Maintenance
+    </button>
+
+    <button hx-get="/parts"
+            hx-target="#main"
+            hx-swap="outerHTML"
+            hx-push-url="true"
+            hx-trigger="click"
+            preload="mouseover">
+      Parts Maintenance
+    </button>
+
+    <button hx-get="/inventory"
+            hx-target="#main"
+            hx-swap="outerHTML"
+            hx-push-url="true"
+            hx-trigger="click"
+            preload="mouseover">
+      Inventory Maintenance
+    </button>
+
+    <button hx-get="/labor"
+            hx-target="#main"
+            hx-swap="outerHTML"
+            hx-push-url="true"
+            hx-trigger="click"
+            preload="mouseover">
+      Labor Maintenance
+    </button>
+
+    <button hx-get="/reports"
+            hx-target="#main"
+            hx-swap="outerHTML"
+            hx-push-url="true"
+            hx-trigger="click"
+            preload="mouseover">
+      Reports / Marketing
+    </button>
+
+    <button hx-get="/system"
+            hx-target="#main"
+            hx-swap="outerHTML"
+            hx-push-url="true"
+            hx-trigger="click"
+            preload="mouseover">
+      System Utilities
+    </button>
+
+    <button hx-get="/logout"
+            hx-target="#main"
+            hx-swap="outerHTML"
+            hx-push-url="true"
+            hx-trigger="click"
+            preload="mouseover">
+      Exit
+    </button>
+
+  </menu>
+</main>

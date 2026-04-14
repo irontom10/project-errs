@@ -1,0 +1,15 @@
+<main id="main" th:fragment="content" xmlns:hx="http://www.w3.org/1999/xhtml">
+    <h1 class="text-center mb-6">Dashboard</h1>
+
+    <menu>
+
+        <button hx-get="/workorders"
+                hx-target="#main"
+                hx-swap="outerHTML"
+                hx-push-url="true"
+                hx-trigger="click"
+                preload="mouseover">
+            Bookshelf
+        </button>
+    </menu>
+</main>

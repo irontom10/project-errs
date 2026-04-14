@@ -1,0 +1,115 @@
+<main id="main" th:fragment="content">
+  <h1 class="text-center mb-6">Workorders / Estimates</h1>
+
+  <menu>
+
+    <button hx-get="/workorders/tickets"
+            hx-target="main"
+            hx-swap="outerHTML"
+            hx-push-url="true"
+    hx-trigger="click"
+hx-preload="true">
+      All Open Tickets
+    </button>
+
+    <button hx-get="/workorders/open"
+            hx-target="main"
+            hx-swap="outerHTML"
+            hx-push-url="true"
+    hx-trigger="click"
+hx-preload="true">
+      Open Work Orders
+    </button>
+
+    <button hx-get="/estimates/open"
+            hx-target="main"
+            hx-swap="outerHTML"
+            hx-push-url="true"
+      hx-trigger="click"
+hx-preload="true">
+      Open Quick Estimates
+    </button>
+
+    <button hx-get="/workorders/new"
+            hx-target="main"
+            hx-swap="outerHTML"
+            hx-push-url="true"
+    hx-trigger="click"
+hx-preload="true">
+      Add Work Order
+    </button>
+
+    <button hx-get="/estimates/new"
+            hx-target="main"
+            hx-swap="outerHTML"
+            hx-push-url="true"
+    hx-trigger="click"
+hx-preload="true">
+      Add Quick Estimate
+    </button>
+
+    <button hx-get="/workorders/delete-open"
+            hx-target="main"
+            hx-swap="outerHTML"
+            hx-push-url="true"
+    hx-trigger="click"
+hx-preload="true">
+      Delete Open Work Orders
+    </button>
+
+    <button hx-get="/workorders/closed"
+            hx-target="main"
+            hx-swap="outerHTML"
+            hx-push-url="true"
+        hx-trigger="click"
+hx-preload="true">
+      Closed Work Orders
+    </button>
+
+    <button hx-get="/workorders/closed-balance"
+            hx-target="main"
+            hx-swap="outerHTML"
+            hx-push-url="true"
+        hx-trigger="click"
+hx-preload="true">
+      Closed WO's W / Balance
+    </button>
+
+    <button hx-get="/sales/otc"
+            hx-target="main"
+            hx-swap="outerHTML"
+            hx-push-url="true"
+        hx-trigger="click"
+hx-preload="true">
+      Over the Counter Sales
+    </button>
+
+    <button hx-get="/appointments/new"
+            hx-target="main"
+            hx-swap="outerHTML"
+            hx-push-url="true"
+        hx-trigger="click"
+hx-preload="true">
+      Add Appointment
+    </button>
+
+    <button hx-get="/appointments"
+            hx-target="main"
+            hx-swap="outerHTML"
+            hx-push-url="true"
+        hx-trigger="click"
+hx-preload="true">
+      View Appointments
+    </button>
+
+    <button hx-get="/"
+            hx-target="main"
+            hx-swap="outerHTML"
+            hx-push-url="true"
+        hx-trigger="click"
+hx-preload="true">
+      Return to Main Menu
+    </button>
+
+  </menu>
+</main>

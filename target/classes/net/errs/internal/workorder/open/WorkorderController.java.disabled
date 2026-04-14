@@ -1,0 +1,12 @@
+package net.errs.internal.workorder.open;
+
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class WorkorderController {
+
+
+
+    
+}

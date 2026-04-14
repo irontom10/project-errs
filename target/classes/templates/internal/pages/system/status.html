@@ -1,0 +1,34 @@
+<main th:fragment="content">
+    <h1 class="text-2xl font-bold mb-4">System Status</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+        <div class="rounded-xl border p-4">
+            <h2 class="font-bold mb-2">CPU</h2>
+            <p>System CPU: <span th:text="${status.systemCpuUsagePercent}"></span>%</p>
+            <p>Process CPU: <span th:text="${status.processCpuUsagePercent}"></span>%</p>
+        </div>
+
+        <div class="rounded-xl border p-4">
+            <h2 class="font-bold mb-2">System Memory</h2>
+            <p>Used: <span th:text="${status.systemMemoryUsedMb}"></span> MB</p>
+            <p>Available: <span th:text="${status.systemMemoryAvailableMb}"></span> MB</p>
+        </div>
+
+        <div class="rounded-xl border p-4">
+            <h2 class="font-bold mb-2">JVM Heap</h2>
+            <p>Used: <span th:text="${status.jvmHeapUsedMb}"></span> MB</p>
+            <p>Max: <span th:text="${status.jvmHeapMaxMb}"></span> MB</p>
+        </div>
+
+        <div class="rounded-xl border p-4">
+            <h2 class="font-bold mb-2">Disk</h2>
+            <p>Free: <span th:text="${status.diskFreeGb}"></span> GB</p>
+            <p>Total: <span th:text="${status.diskTotalGb}"></span> GB</p>
+        </div>
+
+        <div class="rounded-xl border p-4">
+            <h2 class="font-bold mb-2">Runtime</h2>
+            <p>Threads: <span th:text="${status.liveThreads}"></span></p>
+            <p>Uptime: <span th:text="${status.uptimeSeconds}"></span> sec</p>
+        </div>
+</main>

@@ -1,0 +1,117 @@
+
+<main id="main" th:fragment="content">
+    <div class="flex items-center justify-between mb-6">
+        <div>
+            <h1 class="text-3xl font-bold">Bookshelf</h1>
+            <p class="text-zinc-400 mt-1" th:text="${currentPath == '' ? '/' : currentPath}">/</p>
+        </div>
+
+        <a th:if="${parentPath != null}"
+           th:href="@{/internal/util/books(path=${parentPath})}"
+           class="px-4 py-2 rounded bg-zinc-700 hover:bg-zinc-600">
+            Up One Level
+        </a>
+    </div>
+
+    <form th:action="@{/internal/util/books}" method="get" class="bg-zinc-800 border border-zinc-700 rounded-lg p-4 mb-6">
+        <input id="book-path" type="hidden" name="path" th:value="${currentPath}">
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
+            <label class="sr-only" for="book-search">Search books</label>
+            <input id="book-search"
+                   type="text"
+                   name="q"
+                   placeholder="Search all items"
+                   th:value="${searchQuery}"
+                   th:attr="hx-get=@{/internal/util/books}"
+                   hx-trigger="keyup changed delay:500ms"
+                   hx-target="#bookshelf-search-results"
+                   hx-select="#bookshelf-search-results"
+                   hx-include="#book-path"
+                   class="flex-1 rounded bg-zinc-900 border border-zinc-700 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-amber-500">
+            <div class="flex gap-2">
+                <button type="submit" class="px-4 py-2 rounded bg-amber-700 hover:bg-amber-600">Search</button>
+                <a th:if="${!#strings.isEmpty(searchQuery)}"
+                   th:href="@{/internal/util/books(path=${currentPath})}"
+                   class="px-4 py-2 rounded bg-zinc-700 hover:bg-zinc-600">Clear</a>
+            </div>
+        </div>
+    </form>
+
+    <div id="bookshelf-search-results">
+        <div th:if="${!#strings.isEmpty(searchQuery)}" class="bg-zinc-800 border border-zinc-700 rounded-lg p-6 mb-8">
+            <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between mb-4">
+                <div>
+                    <h2 class="text-2xl font-semibold">Search Results</h2>
+                    <p class="text-zinc-400" th:text="${'Showing matches for ' + searchQuery}">Showing matches for query</p>
+                </div>
+                <div class="text-sm text-zinc-400" th:text="${#strings.concat(#lists.size(searchResults), ' matches')}">0 matches</div>
+            </div>
+
+            <div th:if="${#lists.isEmpty(searchResults)}" class="text-zinc-400">
+                No items matched your search.
+            </div>
+
+            <div th:unless="${#lists.isEmpty(searchResults)}" class="space-y-3">
+                <div th:each="result : ${searchResults}"
+                     class="flex flex-col gap-3 sm:flex-row sm:items-center bg-zinc-900 border border-zinc-700 rounded-lg p-4">
+                    <div th:if="${result.previewSvg != null}"
+                         class="w-full sm:w-32 h-40 overflow-hidden rounded bg-zinc-950">
+                        <div class="w-full h-full" th:utext="${result.previewSvg}"></div>
+                    </div>
+                    <div class="flex-1">
+                        <div class="text-xs uppercase text-zinc-400" th:text="${result.directory ? 'Folder' : result.type}">Folder</div>
+                        <div class="font-semibold text-lg" th:text="${result.name}">File Name</div>
+                        <div class="text-xs text-zinc-500" th:text="${result.relativePath}">path/to/file</div>
+                    </div>
+                    <div class="flex gap-2">
+                        <a th:if="${result.directory}"
+                           th:href="@{/internal/util/books(path=${result.relativePath})}"
+                           class="px-3 py-2 rounded bg-zinc-700 hover:bg-zinc-600 text-sm">
+                            Open Folder
+                        </a>
+                        <a th:unless="${result.directory}"
+                           th:href="@{/internal/util/books/file(path=${result.relativePath})}"
+                           target="_blank"
+                           class="px-3 py-2 rounded bg-amber-700 hover:bg-amber-600 text-sm">
+                            Open File
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:if="${#lists.isEmpty(items)}" class="text-zinc-400">
+        This folder is empty.
+    </div>
+
+    <div th:unless="${#lists.isEmpty(items)}"
+         class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+
+        <div th:each="item : ${items}">
+            <a th:if="${item.directory}"
+            th:href="@{/internal/util/books(path=${item.relativePath})}"
+               class="block group">
+                <div class="bg-yellow-700 border border-yellow-500 rounded-lg h-40 p-4 flex flex-col justify-between group-hover:scale-105 transition">
+                    <div class="text-xs uppercase text-yellow-100">Folder</div>
+                    <div class="font-bold text-lg break-words" th:text="${item.name}">Folder Name</div>
+                </div>
+            </a>
+
+            <a th:unless="${item.directory}"
+               th:href="@{/internal/util/books/file(path=${item.relativePath})}"
+               target="_blank"
+               class="block group">
+                <div class="bg-amber-800 border border-amber-500 rounded-lg h-56 p-4 flex flex-col gap-3 group-hover:scale-105 transition">
+                    <div th:if="${item.previewSvg != null}"
+                         class="flex-1 overflow-hidden rounded-md bg-zinc-900 shadow-inner">
+                        <div class="w-full h-full" th:utext="${item.previewSvg}"></div>
+                    </div>
+                    <div class="text-xs uppercase text-amber-100" th:text="${item.type}">application/pdf</div>
+                    <div class="font-bold text-lg break-words" th:text="${item.name}">File Name</div>
+                    <div class="text-sm text-amber-100" th:text="${item.size + ' bytes'}">1234 bytes</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</main>

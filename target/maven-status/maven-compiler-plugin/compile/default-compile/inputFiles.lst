@@ -1,0 +1,16 @@
+/home/irontom10/git/project-errs/src/main/java/net/errs/ErrsApplication.java
+/home/irontom10/git/project-errs/src/main/java/net/errs/common/controllers/IndexController.java
+/home/irontom10/git/project-errs/src/main/java/net/errs/common/security/AppSecurityConfig.java
+/home/irontom10/git/project-errs/src/main/java/net/errs/common/security/DevSecurityConfig.java
+/home/irontom10/git/project-errs/src/main/java/net/errs/common/security/UserConfig.java
+/home/irontom10/git/project-errs/src/main/java/net/errs/internal/customer/CustomerService.java
+/home/irontom10/git/project-errs/src/main/java/net/errs/internal/dashboard/DashboardController.java
+/home/irontom10/git/project-errs/src/main/java/net/errs/internal/inventory/InventoryService.java
+/home/irontom10/git/project-errs/src/main/java/net/errs/internal/parts/PartService.java
+/home/irontom10/git/project-errs/src/main/java/net/errs/internal/system/status/SystemStatusController.java
+/home/irontom10/git/project-errs/src/main/java/net/errs/internal/system/status/SystemStatusService.java
+/home/irontom10/git/project-errs/src/main/java/net/errs/internal/system/status/dto/SystemStatusDto.java
+/home/irontom10/git/project-errs/src/main/java/net/errs/internal/util/bookshelf/BookController.java
+/home/irontom10/git/project-errs/src/main/java/net/errs/internal/util/bookshelf/BookshelfController.java
+/home/irontom10/git/project-errs/src/main/java/net/errs/internal/util/bookshelf/BookshelfService.java
+/home/irontom10/git/project-errs/src/main/java/net/errs/internal/util/bookshelf/dto/BookDTO.java

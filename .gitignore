@@ -31,3 +31,12 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Syncthing metadata
+.stfolder
+
+# Syncthing versioning folder
+.stversions/
+
+# Syncthing temp files (rare but safe)
+.sttmp*
