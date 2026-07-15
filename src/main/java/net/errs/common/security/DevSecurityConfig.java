@@ -13,6 +13,12 @@ public class DevSecurityConfig {
     @Bean
     SecurityFilterChain devSecurityFilterChain(HttpSecurity http) throws Exception {
         http
+                .headers(headers -> headers
+                        .frameOptions(frameOptions -> frameOptions.sameOrigin())
+                        .contentSecurityPolicy(csp -> csp
+                                .policyDirectives("frame-ancestors 'self';")
+                        )
+                )
                 .authorizeHttpRequests(auth -> auth
                         .anyRequest().permitAll()
                 )

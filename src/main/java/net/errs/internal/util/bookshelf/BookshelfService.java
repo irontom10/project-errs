@@ -1,6 +1,7 @@
 package net.errs.internal.util.bookshelf;
 
 import net.errs.internal.util.bookshelf.dto.BookDTO;
+import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.rendering.ImageType;
 import org.apache.pdfbox.rendering.PDFRenderer;
@@ -342,7 +343,7 @@ public class BookshelfService {
     }
 
     private String renderPdfPreview(Path pdfPath) throws IOException {
-        try (PDDocument document = PDDocument.load(pdfPath.toFile())) {
+        try (PDDocument document = Loader.loadPDF(pdfPath.toFile())) {
             if (document.getNumberOfPages() == 0) {
                 return null;
             }

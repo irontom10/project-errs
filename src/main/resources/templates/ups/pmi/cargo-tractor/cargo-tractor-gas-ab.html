@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<section th:fragment="content" class="space-y-6">
+
+    <div class="border-2 border-gold bg-gray-800 p-4">
+        <h1 class="text-2xl mb-2">Cargo Tractor PMI</h1>
+        <p class="text-sm text-gray-200">
+            Fill out the PMI data, then render the PDF form.
+        </p>
+    </div>
+
+    <div class="grid grid-cols-1 xl:grid-cols-[minmax(0,700px)_minmax(0,1fr)] gap-6">
+
+        <!-- LEFT: FORM -->
+        <section class="border-2 border-gold bg-gray-800 p-4 space-y-6">
+            <form id="cargoTractorForm" class="space-y-6">
+
+                <!-- Basic info -->
+                <section class="border border-gold p-4 space-y-4">
+                    <h2 class="text-lg">Basic Info</h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <label class="block">
+                            <span class="block mb-1">Location</span>
+                            <input id="location" name="location" type="text" value="ABY" class="w-full bg-gray-600 p-2">
+                        </label>
+
+                        <label class="block">
+                            <span class="block mb-1">Date Completed</span>
+                            <input id="dateCompleted" name="dateCompleted" type="date" class="w-full bg-gray-600 p-2">
+                        </label>
+
+                        <label class="block">
+                            <span class="block mb-1">Unit No</span>
+                            <input id="unitNo" name="unitNo" type="text" value="TEST-UNIT-001" class="w-full bg-gray-600 p-2">
+                        </label>
+
+                        <label class="block">
+                            <span class="block mb-1">PMI</span>
+                            <select id="pmi" name="pmi" class="w-full bg-gray-600 p-2">
+                                <option value="A" selected>A</option>
+                                <option value="B">B</option>
+                            </select>
+                        </label>
+                    </div>
+                </section>
+
+                <!-- Tire / page 1 -->
+                <section class="border border-gold p-4 space-y-4">
+                    <h2 class="text-lg">Page 1 Measurements</h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <label class="block md:col-span-2">
+                            <span class="block mb-1">Steering Play</span>
+                            <input id="steeringPlay" name="steeringPlay" type="text" value="OK" class="w-full bg-gray-600 p-2">
+                        </label>
+
+                        <label class="block">
+                            <span class="block mb-1">RF Tire Depth</span>
+                            <input id="rfTireDepth" name="rfTireDepth" type="text" value="12" class="w-full bg-gray-600 p-2">
+                        </label>
+
+                        <label class="block">
+                            <span class="block mb-1">LF Tire Depth</span>
+                            <input id="lfTireDepth" name="lfTireDepth" type="text" value="11" class="w-full bg-gray-600 p-2">
+                        </label>
+
+                        <label class="block">
+                            <span class="block mb-1">RR Tire Depth</span>
+                            <input id="rrTireDepth" name="rrTireDepth" type="text" value="10" class="w-full bg-gray-600 p-2">
+                        </label>
+
+                        <label class="block">
+                            <span class="block mb-1">LR Tire Depth</span>
+                            <input id="lrTireDepth" name="lrTireDepth" type="text" value="10" class="w-full bg-gray-600 p-2">
+                        </label>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <label class="block">
+                            <span class="block mb-1">RF Pressure Checked</span>
+                            <input id="rfTirePressureChecked" name="rfTirePressureChecked" type="text" value="100" class="w-full bg-gray-600 p-2">
+                        </label>
+
+                        <label class="block">
+                            <span class="block mb-1">LF Pressure Checked</span>
+                            <input id="lfTirePressureChecked" name="lfTirePressureChecked" type="text" value="100" class="w-full bg-gray-600 p-2">
+                        </label>
+
+                        <label class="block">
+                            <span class="block mb-1">RR Pressure Checked</span>
+                            <input id="rrTirePressureChecked" name="rrTirePressureChecked" type="text" value="100" class="w-full bg-gray-600 p-2">
+                        </label>
+
+                        <label class="block">
+                            <span class="block mb-1">LR Pressure Checked</span>
+                            <input id="lrTirePressureChecked" name="lrTirePressureChecked" type="text" value="100" class="w-full bg-gray-600 p-2">
+                        </label>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <label class="block">
+                            <span class="block mb-1">RF Pressure Corrected</span>
+                            <input id="rfTirePressureCorrected" name="rfTirePressureCorrected" type="text" value="100" class="w-full bg-gray-600 p-2">
+                        </label>
+
+                        <label class="block">
+                            <span class="block mb-1">LF Pressure Corrected</span>
+                            <input id="lfTirePressureCorrected" name="lfTirePressureCorrected" type="text" value="100" class="w-full bg-gray-600 p-2">
+                        </label>
+
+                        <label class="block">
+                            <span class="block mb-1">RR Pressure Corrected</span>
+                            <input id="rrTirePressureCorrected" name="rrTirePressureCorrected" type="text" value="100" class="w-full bg-gray-600 p-2">
+                        </label>
+
+                        <label class="block">
+                            <span class="block mb-1">LR Pressure Corrected</span>
+                            <input id="lrTirePressureCorrected" name="lrTirePressureCorrected" type="text" value="100" class="w-full bg-gray-600 p-2">
+                        </label>
+                    </div>
+
+                    <label class="block">
+                        <span class="block mb-1">Qts Oil</span>
+                        <input id="qtsOil" name="qtsOil" type="text" value="5" class="w-full bg-gray-600 p-2">
+                    </label>
+                </section>
+
+                <!-- Page 2 -->
+                <section class="border border-gold p-4 space-y-4">
+                    <h2 class="text-lg">Page 2 Measurements</h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <label class="block">
+                            <span class="block mb-1">Coolant Condition</span>
+                            <input id="coolantCondition" name="coolantCondition" type="text" class="w-full bg-gray-600 p-2">
+                        </label>
+
+                        <label class="block">
+                            <span class="block mb-1">Coolant Protection</span>
+                            <input id="coolantProtection" name="coolantProtection" type="text" class="w-full bg-gray-600 p-2">
+                        </label>
+
+                        <label class="block">
+                            <span class="block mb-1">Battery Load Test Voltage</span>
+                            <input id="batteryLoadTestVoltage" name="batteryLoadTestVoltage" type="text" class="w-full bg-gray-600 p-2">
+                        </label>
+
+                        <label class="block">
+                            <span class="block mb-1">Alt Full Output Volts</span>
+                            <input id="altFullOutputVolts" name="altFullOutputVolts" type="text" class="w-full bg-gray-600 p-2">
+                        </label>
+
+                        <label class="block">
+                            <span class="block mb-1">Alt Full Output Amps</span>
+                            <input id="altFullOutputAmps" name="altFullOutputAmps" type="text" class="w-full bg-gray-600 p-2">
+                        </label>
+
+                        <label class="block">
+                            <span class="block mb-1">Gauge Hours</span>
+                            <input id="gaugeHours" name="gaugeHours" type="text" class="w-full bg-gray-600 p-2">
+                        </label>
+                    </div>
+
+                    <div class="border border-gold p-4 space-y-4">
+                        <h3 class="text-base">PMI B Only</h3>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <label class="block">
+                                <span class="block mb-1">Batt Cable Drop Pos</span>
+                                <input id="battCableDropPos" name="battCableDropPos" type="text" class="w-full bg-gray-600 p-2">
+                            </label>
+
+                            <label class="block">
+                                <span class="block mb-1">Batt Cable Drop Neg</span>
+                                <input id="battCableDropNeg" name="battCableDropNeg" type="text" class="w-full bg-gray-600 p-2">
+                            </label>
+
+                            <label class="block">
+                                <span class="block mb-1">Batt Ign Sw Drop</span>
+                                <input id="battIgnSwDrop" name="battIgnSwDrop" type="text" class="w-full bg-gray-600 p-2">
+                            </label>
+
+                            <label class="block">
+                                <span class="block mb-1">Init Timing</span>
+                                <input id="initTiming" name="initTiming" type="text" class="w-full bg-gray-600 p-2">
+                            </label>
+
+                            <label class="block">
+                                <span class="block mb-1">Mechanical Adv Timing</span>
+                                <input id="mechanicalAdvTiming" name="mechanicalAdvTiming" type="text" class="w-full bg-gray-600 p-2">
+                            </label>
+
+                            <label class="block">
+                                <span class="block mb-1">Total Adv Timing</span>
+                                <input id="totalAdvTiming" name="totalAdvTiming" type="text" class="w-full bg-gray-600 p-2">
+                            </label>
+
+                            <label class="block">
+                                <span class="block mb-1">Thermostat Opening</span>
+                                <input id="thermostatOpening" name="thermostatOpening" type="text" class="w-full bg-gray-600 p-2">
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- inspection items -->
+                <section class="border border-gold p-4 space-y-4">
+                    <div class="flex items-center justify-between gap-4">
+                        <h2 class="text-lg">Inspection Items</h2>
+                        <button type="button" id="fillOkBtn">Fill All OK (2)</button>
+                    </div>
+
+                    <p class="text-sm text-gray-300">
+                        Value key example: 2 = OK, 3 = Adjusted, 4 = Repaired, 5 = Repair Needed
+                    </p>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-3" id="inspectionGrid"></div>
+                </section>
+
+                <section class="flex flex-wrap gap-2">
+                    <button type="button" id="renderBtn">Render PDF</button>
+                    <button type="button" id="openDefaultBtn">Open Default Test PDF</button>
+                </section>
+            </form>
+        </section>
+
+        <!-- RIGHT: PREVIEW -->
+        <section class="border-2 border-gold bg-gray-800 p-4 min-h-[900px] flex flex-col gap-4">
+            <div class="flex items-center justify-between gap-4">
+                <h2 class="text-lg">PDF Preview</h2>
+                <span id="statusText" class="text-sm text-gray-300">Idle</span>
+            </div>
+
+            <iframe
+                    id="pdfPreview"
+                    class="w-full flex-1 min-h-[800px] bg-white"
+                    th:src="@{/internal/pmi/cargo-tractor}">
+            </iframe>
+        </section>
+    </div>
+
+    <script>
+        (() => {
+            const ITEM_IDS = [
+                "101", "102", "103", "104", "105", "106",
+                "107", "108", "109", "110", "110.1",
+                "201", "201.1", "202", "203", "204", "205", "206", "207", "208",
+                "209", "210", "211", "212", "213",
+                "301", "302", "302.1", "302.2", "302.3", "302.4",
+                "303", "304", "305", "306", "306.1", "306.2", "306.3", "306.4",
+                "501", "502", "502.1", "503", "503.1", "504", "505", "506", "507", "508",
+                "509", "509.1", "510", "511", "512", "513", "514",
+                "601", "601.1", "602", "603", "604", "605", "606", "607", "608",
+                "609", "610", "611", "612", "613", "613.1",
+                "614", "614.1", "614.2", "614.3", "614.4", "614.5", "614.6", "614.7",
+                "616", "616.1", "617", "617.1", "617.2", "618", "618.1",
+                "701", "702"
+            ];
+
+            const inspectionGrid = document.getElementById("inspectionGrid");
+            const preview = document.getElementById("pdfPreview");
+            const statusText = document.getElementById("statusText");
+
+            function buildInspectionGrid() {
+                inspectionGrid.innerHTML = "";
+
+                ITEM_IDS.forEach(id => {
+                    const wrapper = document.createElement("label");
+                    wrapper.className = "block border border-gold p-2 bg-gray-700";
+
+                    wrapper.innerHTML = `
+                        <span class="block text-xs mb-1">${id}</span>
+                        <select data-item-id="${id}" class="w-full bg-gray-600 p-2">
+                            <option value="">-</option>
+                            <option value="2" selected>2 - OK</option>
+                            <option value="3">3 - Adjusted</option>
+                            <option value="4">4 - Repaired</option>
+                            <option value="5">5 - Repair Needed</option>
+                        </select>
+                    `;
+
+                    inspectionGrid.appendChild(wrapper);
+                });
+            }
+
+            function setTodayIfEmpty() {
+                const dateInput = document.getElementById("dateCompleted");
+                if (!dateInput.value) {
+                    const today = new Date();
+                    const yyyy = today.getFullYear();
+                    const mm = String(today.getMonth() + 1).padStart(2, "0");
+                    const dd = String(today.getDate()).padStart(2, "0");
+                    dateInput.value = `${yyyy}-${mm}-${dd}`;
+                }
+            }
+
+            function value(id) {
+                const el = document.getElementById(id);
+                return el ? el.value : "";
+            }
+
+            function buildPayload() {
+                const itemValues = {};
+
+                document.querySelectorAll("[data-item-id]").forEach(el => {
+                    if (el.value !== "") {
+                        itemValues[el.dataset.itemId] = el.value;
+                    }
+                });
+
+                return {
+                    location: value("location"),
+                    dateCompleted: value("dateCompleted"),
+                    unitNo: value("unitNo"),
+                    pmi: value("pmi"),
+
+                    steeringPlay: value("steeringPlay"),
+                    rfTireDepth: value("rfTireDepth"),
+                    lfTireDepth: value("lfTireDepth"),
+                    rrTireDepth: value("rrTireDepth"),
+                    lrTireDepth: value("lrTireDepth"),
+
+                    rfTirePressureChecked: value("rfTirePressureChecked"),
+                    lfTirePressureChecked: value("lfTirePressureChecked"),
+                    rrTirePressureChecked: value("rrTirePressureChecked"),
+                    lrTirePressureChecked: value("lrTirePressureChecked"),
+
+                    rfTirePressureCorrected: value("rfTirePressureCorrected"),
+                    lfTirePressureCorrected: value("lfTirePressureCorrected"),
+                    rrTirePressureCorrected: value("rrTirePressureCorrected"),
+                    lrTirePressureCorrected: value("lrTirePressureCorrected"),
+
+                    qtsOil: value("qtsOil"),
+
+                    coolantCondition: value("coolantCondition"),
+                    coolantProtection: value("coolantProtection"),
+                    batteryLoadTestVoltage: value("batteryLoadTestVoltage"),
+                    battCableDropPos: value("battCableDropPos"),
+                    battCableDropNeg: value("battCableDropNeg"),
+                    battIgnSwDrop: value("battIgnSwDrop"),
+                    initTiming: value("initTiming"),
+                    mechanicalAdvTiming: value("mechanicalAdvTiming"),
+                    totalAdvTiming: value("totalAdvTiming"),
+                    altFullOutputVolts: value("altFullOutputVolts"),
+                    altFullOutputAmps: value("altFullOutputAmps"),
+                    thermostatOpening: value("thermostatOpening"),
+                    gaugeHours: value("gaugeHours"),
+
+                    itemValues: itemValues
+                };
+            }
+
+            async function renderPdf() {
+                statusText.textContent = "Rendering...";
+
+                const payload = buildPayload();
+
+                try {
+                    const response = await fetch("/internal/pmi/cargo-tractor", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
+
+                    const blob = await response.blob();
+                    const url = URL.createObjectURL(blob);
+                    preview.src = url;
+                    statusText.textContent = "Rendered";
+                } catch (error) {
+                    console.error(error);
+                    statusText.textContent = "Render failed";
+                    alert("Failed to render PDF.");
+                }
+            }
+
+            function fillAllOk() {
+                document.querySelectorAll("[data-item-id]").forEach(el => {
+                    el.value = "2";
+                });
+            }
+
+            document.getElementById("renderBtn").addEventListener("click", renderPdf);
+            document.getElementById("fillOkBtn").addEventListener("click", fillAllOk);
+            document.getElementById("openDefaultBtn").addEventListener("click", () => {
+                preview.src = "/internal/pmi/cargo-tractor";
+                statusText.textContent = "Loaded default";
+            });
+
+            buildInspectionGrid();
+            setTodayIfEmpty();
+        })();
+    </script>
+</section>
+</html>
