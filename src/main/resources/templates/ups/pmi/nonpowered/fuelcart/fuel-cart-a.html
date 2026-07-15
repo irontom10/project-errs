@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<section th:fragment="content" class="space-y-6">
+
+    <div class="border-2 border-gold bg-gray-800 p-4">
+        <h1 class="text-2xl mb-2">Fuel Cart A-PMI</h1>
+        <p class="text-sm text-gray-200">
+            Fill out the Fuel Cart PMI data, then render the PDF form.
+        </p>
+    </div>
+
+    <div class="grid grid-cols-1 xl:grid-cols-[minmax(0,700px)_minmax(0,1fr)] gap-6">
+
+        <!-- LEFT: FORM -->
+        <section class="border-2 border-gold bg-gray-800 p-4 space-y-6">
+            <form id="fuelCartForm" class="space-y-6">
+
+                <!-- Basic info -->
+                <section class="border border-gold p-4 space-y-4">
+                    <h2 class="text-lg">Basic Info</h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <label class="block">
+                            <span class="block mb-1">Location</span>
+                            <input id="location" name="location" type="text" value="ABY" class="w-full bg-gray-600 p-2">
+                        </label>
+
+                        <label class="block">
+                            <span class="block mb-1">Date Completed</span>
+                            <input id="dateCompleted" name="dateCompleted" type="date" class="w-full bg-gray-600 p-2">
+                        </label>
+
+                        <label class="block md:col-span-2">
+                            <span class="block mb-1">Unit No</span>
+                            <input id="unitNo" name="unitNo" type="text" value="FUEL-CART-001" class="w-full bg-gray-600 p-2">
+                        </label>
+                    </div>
+                </section>
+
+                <!-- Tire rows -->
+                <section class="border border-gold p-4 space-y-4">
+                    <h2 class="text-lg">Tire Measurements</h2>
+
+                    <div class="grid grid-cols-4 gap-2 text-sm">
+                        <div class="font-bold">Wheel</div>
+                        <div class="font-bold">Depth</div>
+                        <div class="font-bold">Pressure Checked</div>
+                        <div class="font-bold">Pressure Corrected</div>
+
+                        <div class="flex items-center">RF</div>
+                        <input id="rfTireDepth" type="text" value="12" class="bg-gray-600 p-2">
+                        <input id="rfTirePressureChecked" type="text" value="100" class="bg-gray-600 p-2">
+                        <input id="rfTirePressureCorrected" type="text" value="100" class="bg-gray-600 p-2">
+
+                        <div class="flex items-center">LF</div>
+                        <input id="lfTireDepth" type="text" value="12" class="bg-gray-600 p-2">
+                        <input id="lfTirePressureChecked" type="text" value="100" class="bg-gray-600 p-2">
+                        <input id="lfTirePressureCorrected" type="text" value="100" class="bg-gray-600 p-2">
+
+                        <div class="flex items-center">LR</div>
+                        <input id="lrTireDepth" type="text" value="10" class="bg-gray-600 p-2">
+                        <input id="lrTirePressureChecked" type="text" value="100" class="bg-gray-600 p-2">
+                        <input id="lrTirePressureCorrected" type="text" value="100" class="bg-gray-600 p-2">
+
+                        <div class="flex items-center">RR</div>
+                        <input id="rrTireDepth" type="text" value="10" class="bg-gray-600 p-2">
+                        <input id="rrTirePressureChecked" type="text" value="100" class="bg-gray-600 p-2">
+                        <input id="rrTirePressureCorrected" type="text" value="100" class="bg-gray-600 p-2">
+                    </div>
+                </section>
+
+                <!-- inspection items -->
+                <section class="border border-gold p-4 space-y-4">
+                    <div class="flex items-center justify-between gap-4">
+                        <h2 class="text-lg">Inspection Items</h2>
+                        <button type="button" id="fillOkBtn">Fill All OK (2)</button>
+                    </div>
+
+                    <p class="text-sm text-gray-300">
+                        Value key example: 2 = OK, 3 = Adjusted, 4 = Repaired, 5 = Repair Needed
+                    </p>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-3" id="inspectionGrid"></div>
+                </section>
+
+                <section class="flex flex-wrap gap-2">
+                    <button type="button" id="renderBtn">Render PDF</button>
+                    <button type="button" id="openDefaultBtn">Open Default Test PDF</button>
+                </section>
+            </form>
+        </section>
+
+        <!-- RIGHT: PREVIEW -->
+        <section class="border-2 border-gold bg-gray-800 p-4 min-h-[900px] flex flex-col gap-4">
+            <div class="flex items-center justify-between gap-4">
+                <h2 class="text-lg">PDF Preview</h2>
+                <span id="statusText" class="text-sm text-gray-300">Idle</span>
+            </div>
+
+            <iframe
+                    id="pdfPreview"
+                    class="w-full flex-1 min-h-[800px] bg-white"
+                    th:src="@{/internal/pmi/fuel-cart}">
+            </iframe>
+        </section>
+    </div>
+
+    <script>
+        (() => {
+            const ITEM_IDS = [
+                "1", "38", "40", "41", "9", "37", "29", "31", "32", "33",
+                "16", "35", "46", "65", "36", "51",
+                "58", "20", "53", "22", "24", "59", "27", "39", "30", "61",
+                "62", "63", "66", "67", "60", "50", "52", "54", "56", "71"
+            ];
+
+            const inspectionGrid = document.getElementById("inspectionGrid");
+            const preview = document.getElementById("pdfPreview");
+            const statusText = document.getElementById("statusText");
+
+            function buildInspectionGrid() {
+                inspectionGrid.innerHTML = "";
+
+                ITEM_IDS.forEach(id => {
+                    const wrapper = document.createElement("label");
+                    wrapper.className = "block border border-gold p-2 bg-gray-700";
+
+                    wrapper.innerHTML = `
+                        <span class="block text-xs mb-1">${id}</span>
+                        <select data-item-id="${id}" class="w-full bg-gray-600 p-2">
+                            <option value="">-</option>
+                            <option value="2" selected>2 - OK</option>
+                            <option value="3">3 - Adjusted</option>
+                            <option value="4">4 - Repaired</option>
+                            <option value="5">5 - Repair Needed</option>
+                        </select>
+                    `;
+
+                    inspectionGrid.appendChild(wrapper);
+                });
+            }
+
+            function setTodayIfEmpty() {
+                const dateInput = document.getElementById("dateCompleted");
+                if (!dateInput.value) {
+                    const today = new Date();
+                    const yyyy = today.getFullYear();
+                    const mm = String(today.getMonth() + 1).padStart(2, "0");
+                    const dd = String(today.getDate()).padStart(2, "0");
+                    dateInput.value = `${yyyy}-${mm}-${dd}`;
+                }
+            }
+
+            function value(id) {
+                const el = document.getElementById(id);
+                return el ? el.value : "";
+            }
+
+            function buildPayload() {
+                const itemValues = {};
+
+                document.querySelectorAll("[data-item-id]").forEach(el => {
+                    if (el.value !== "") {
+                        itemValues[el.dataset.itemId] = el.value;
+                    }
+                });
+
+                return {
+                    location: value("location"),
+                    dateCompleted: value("dateCompleted"),
+                    unitNo: value("unitNo"),
+
+                    rfTireDepth: value("rfTireDepth"),
+                    lfTireDepth: value("lfTireDepth"),
+                    lrTireDepth: value("lrTireDepth"),
+                    rrTireDepth: value("rrTireDepth"),
+
+                    rfTirePressureChecked: value("rfTirePressureChecked"),
+                    lfTirePressureChecked: value("lfTirePressureChecked"),
+                    lrTirePressureChecked: value("lrTirePressureChecked"),
+                    rrTirePressureChecked: value("rrTirePressureChecked"),
+
+                    rfTirePressureCorrected: value("rfTirePressureCorrected"),
+                    lfTirePressureCorrected: value("lfTirePressureCorrected"),
+                    lrTirePressureCorrected: value("lrTirePressureCorrected"),
+                    rrTirePressureCorrected: value("rrTirePressureCorrected"),
+
+                    itemValues: itemValues
+                };
+            }
+
+            async function renderPdf() {
+                statusText.textContent = "Rendering...";
+
+                const payload = buildPayload();
+
+                try {
+                    const response = await fetch("/internal/pmi/fuel-cart", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
+
+                    const blob = await response.blob();
+                    const url = URL.createObjectURL(blob);
+                    preview.src = url;
+                    statusText.textContent = "Rendered";
+                } catch (error) {
+                    console.error(error);
+                    statusText.textContent = "Render failed";
+                    alert("Failed to render PDF.");
+                }
+            }
+
+            function fillAllOk() {
+                document.querySelectorAll("[data-item-id]").forEach(el => {
+                    el.value = "2";
+                });
+            }
+
+            document.getElementById("renderBtn").addEventListener("click", renderPdf);
+            document.getElementById("fillOkBtn").addEventListener("click", fillAllOk);
+            document.getElementById("openDefaultBtn").addEventListener("click", () => {
+                preview.src = "/internal/pmi/fuel-cart";
+                statusText.textContent = "Loaded default";
+            });
+
+            buildInspectionGrid();
+            setTodayIfEmpty();
+        })();
+    </script>
+</section>
+</html>
