@@ -29,6 +29,6 @@ public class BookshelfController {
         model.addAttribute("items", bookshelfService.listFolder(path));
         model.addAttribute("searchQuery", hasQuery ? query : "");
         model.addAttribute("searchResults", hasQuery ? bookshelfService.search(query) : List.of());
-        return "internal/pages/util/bookshelf/menu";
+        return "internal/pages/system/util/bookshelf/menu";
     }
 }
