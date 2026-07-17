@@ -40,3 +40,5 @@ build/
 
 # Syncthing temp files (rare but safe)
 .sttmp*
+/.idea
+/target
