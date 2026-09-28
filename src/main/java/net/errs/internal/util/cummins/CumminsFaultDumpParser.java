@@ -198,7 +198,7 @@ public class CumminsFaultDumpParser {
                 .replace('\u00a0', ' ')
                 .replace('\u2007', ' ')
                 .replace('\u202f', ' ')
-                .replace("\\r\\n", "\\n")
+                .replace("\r\n", "\n")
                 .replace('\r', '\n');
     }
 
