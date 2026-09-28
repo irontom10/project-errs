@@ -1,0 +1,266 @@
+<main id="main"
+      th:fragment="content"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:hx="http://www.w3.org/1999/xhtml"
+      class="bg-gray-700">
+
+    <script>
+        function errsApplyCumminsFaultFilter() {
+            const search = document.getElementById('cummins-fault-search');
+            const filter = document.getElementById('cummins-fault-filter');
+            const count = document.getElementById('cummins-visible-count');
+            if (!search || !filter) return;
+
+            const q = search.value.trim().toLowerCase();
+            const mode = filter.value;
+            let visible = 0;
+
+            document.querySelectorAll('[data-cummins-fault]').forEach((card) => {
+                const text = (card.dataset.search || '').toLowerCase();
+                const status = card.dataset.status || '';
+                const lamp = card.dataset.lamp || '';
+                const occurrences = Number(card.dataset.count || '0');
+
+                const textMatch = !q || text.includes(q);
+                const modeMatch =
+                    mode === 'all' ||
+                    mode === status ||
+                    mode === lamp ||
+                    (mode === 'repeated' && occurrences > 1);
+
+                const show = textMatch && modeMatch;
+                card.classList.toggle('hidden', !show);
+                if (show) visible++;
+            });
+
+            if (count) count.textContent = String(visible);
+        }
+
+        function errsSetAllCumminsDetails(open) {
+            document.querySelectorAll('[data-cummins-details]')
+                .forEach((details) => details.open = open);
+        }
+    </script>
+
+    <section class="mx-auto max-w-[1600px] space-y-5">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-gold/40 pb-4">
+            <div>
+                <h1 class="text-3xl text-gold">Cummins Fault Dump</h1>
+                <p class="mt-1 text-nord-4">
+                    Import an INSITE <span class="text-gold">Faults Information</span> PDF and read the damn thing without fighting INSITE.
+                </p>
+            </div>
+
+            <button type="button"
+                    class="!m-0"
+                    hx-get="/internal"
+                    hx-target="#main"
+                    hx-swap="outerHTML"
+                    hx-push-url="true">
+                Dashboard
+            </button>
+        </div>
+
+        <form hx-post="/internal/util/cummins-faults"
+              hx-target="#main"
+              hx-swap="outerHTML"
+              hx-encoding="multipart/form-data"
+              class="grid gap-3 rounded border border-gold/40 bg-gray-800 p-4 md:grid-cols-[1fr_auto]">
+
+            <label class="block">
+                <span class="mb-2 block text-gold">INSITE fault dump</span>
+                <input name="file"
+                       type="file"
+                       accept=".pdf,.txt,text/plain,application/pdf"
+                       required
+                       class="block w-full rounded border border-gray-500 bg-gray-900 p-3 text-nord-4
+                              file:mr-4 file:rounded file:border-0 file:bg-navy file:px-4 file:py-2 file:text-gold"/>
+            </label>
+
+            <button type="submit" class="!m-0 self-end px-6 py-3">Import</button>
+        </form>
+
+        <div th:if="${error != null}"
+             class="rounded border border-tokyo-dark-red bg-gray-900 p-4 text-tokyo-dark-red">
+            <span class="font-bold">Import failed:</span>
+            <span th:text="${error}">Could not parse file.</span>
+        </div>
+
+        <div th:if="${dump != null}" class="space-y-5">
+            <section class="grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
+                <div class="rounded border border-gold/30 bg-gray-800 p-3">
+                    <div class="text-nord-4">ESN</div>
+                    <div class="mt-1 text-lg text-gold"
+                         th:text="${#strings.isEmpty(dump.engineSerialNumber) ? '—' : dump.engineSerialNumber}">—</div>
+                </div>
+
+                <div class="rounded border border-gold/30 bg-gray-800 p-3">
+                    <div class="text-nord-4">Unit</div>
+                    <div class="mt-1 text-lg text-gold"
+                         th:text="${#strings.isEmpty(dump.customerUnitNumber) ? '—' : dump.customerUnitNumber}">—</div>
+                </div>
+
+                <div class="rounded border border-gold/30 bg-gray-800 p-3">
+                    <div class="text-nord-4">Engine Hours</div>
+                    <div class="mt-1 text-lg text-gold"
+                         th:text="${#strings.isEmpty(dump.engineHours) ? '—' : dump.engineHours}">—</div>
+                </div>
+
+                <div class="rounded border border-gold/30 bg-gray-800 p-3">
+                    <div class="text-nord-4">Faults</div>
+                    <div class="mt-1 text-lg text-gold" th:text="${dump.faults.size()}">0</div>
+                </div>
+
+                <div class="rounded border border-gold/30 bg-gray-800 p-3">
+                    <div class="text-nord-4">Active</div>
+                    <div class="mt-1 text-lg text-tokyo-dark-red" th:text="${dump.activeFaultCount}">0</div>
+                </div>
+
+                <div class="rounded border border-gold/30 bg-gray-800 p-3">
+                    <div class="text-nord-4">Occurrences</div>
+                    <div class="mt-1 text-lg text-gold" th:text="${dump.totalOccurrences}">0</div>
+                </div>
+            </section>
+
+            <section class="rounded border border-gold/30 bg-gray-800 p-4">
+                <div class="grid gap-3 lg:grid-cols-[1fr_14rem_auto]">
+                    <input id="cummins-fault-search"
+                           type="search"
+                           oninput="errsApplyCumminsFaultFilter()"
+                           placeholder="fault, SPN, FMI, description, parameter, value..."
+                           class="w-full rounded border border-gray-500 bg-gray-900 p-3 text-gold outline-none focus:border-gold"/>
+
+                    <select id="cummins-fault-filter"
+                            onchange="errsApplyCumminsFaultFilter()"
+                            class="!rounded border border-gray-500 bg-gray-900 p-3">
+                        <option value="all">All faults</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                        <option value="red">Red lamp</option>
+                        <option value="amber">Amber lamp</option>
+                        <option value="repeated">Count &gt; 1</option>
+                    </select>
+
+                    <div class="flex items-center justify-end gap-2">
+                        <button type="button" class="!m-0" onclick="errsSetAllCumminsDetails(true)">Expand</button>
+                        <button type="button" class="!m-0" onclick="errsSetAllCumminsDetails(false)">Collapse</button>
+                    </div>
+                </div>
+
+                <div class="mt-3 text-nord-4">
+                    Showing
+                    <span id="cummins-visible-count" class="text-gold" th:text="${dump.faults.size()}">0</span>
+                    fault records from
+                    <span class="text-gold" th:text="${dump.sourceFileName}">faults.pdf</span>
+                </div>
+            </section>
+
+            <section class="space-y-4">
+                <article th:each="fault : ${dump.faults}"
+                         data-cummins-fault
+                         th:attr="data-search=${fault.searchBlob},
+                                  data-status=${fault.statusKey},
+                                  data-lamp=${fault.lampKey},
+                                  data-count=${fault.count}"
+                         class="overflow-hidden rounded border border-gold/30 bg-gray-800">
+
+                    <div class="flex flex-wrap items-center gap-3 bg-gray-900 p-4">
+                        <div class="text-2xl font-bold text-gold">
+                            FC <span th:text="${fault.code}">5111</span>
+                        </div>
+
+                        <span class="rounded px-2 py-1 font-bold"
+                              th:classappend="${fault.active} ? ' bg-tokyo-dark-red text-gray-900' : ' bg-nord-3 text-nord-6'"
+                              th:text="${fault.status}">
+                            Inactive
+                        </span>
+
+                        <span class="rounded px-2 py-1"
+                              th:classappend="${fault.lampKey == 'red'} ? ' bg-tokyo-dark-red text-gray-900' :
+                                             (${fault.lampKey == 'amber'} ? ' bg-tokyo-dark-yellow text-gray-900' : ' bg-nord-3 text-nord-6')"
+                              th:text="${fault.lamp + ' lamp'}">
+                            Amber lamp
+                        </span>
+
+                        <span class="rounded bg-gray-700 px-2 py-1 text-nord-4">
+                            Count <span class="text-gold" th:text="${fault.count}">2</span>
+                        </span>
+
+                        <span th:if="${!#strings.isEmpty(fault.spn)}"
+                              class="rounded bg-gray-700 px-2 py-1 text-nord-4">
+                            SPN <span class="text-gold" th:text="${fault.spn}">6652</span>
+                        </span>
+
+                        <span th:if="${!#strings.isEmpty(fault.j1939Fmi)}"
+                              class="rounded bg-gray-700 px-2 py-1 text-nord-4">
+                            FMI <span class="text-gold" th:text="${fault.j1939Fmi}">18</span>
+                        </span>
+
+                        <div class="ml-auto text-right text-nord-4">
+                            <div th:if="${!#strings.isEmpty(fault.firstSeen)}">
+                                First: <span class="text-gold" th:text="${fault.firstSeen}">—</span>
+                            </div>
+                            <div th:if="${!#strings.isEmpty(fault.lastSeen)}">
+                                Last: <span class="text-gold" th:text="${fault.lastSeen}">—</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 p-4">
+                        <p class="text-base text-nord-6"
+                           th:text="${#strings.isEmpty(fault.description) ? 'No description parsed' : fault.description}">
+                            Fault description
+                        </p>
+
+                        <details data-cummins-details class="rounded border border-gray-600 bg-gray-900">
+                            <summary class="cursor-pointer select-none p-3 text-gold">
+                                Freeze frame / fault parameters
+                                <span class="text-nord-4" th:text="${'(' + fault.parameters.size() + ')'}">(0)</span>
+                            </summary>
+
+                            <div class="overflow-x-auto border-t border-gray-600">
+                                <table class="min-w-full text-left">
+                                    <thead>
+                                    <tr>
+                                        <th><span>Parameter</span></th>
+                                        <th><span>First</span></th>
+                                        <th><span>Last</span></th>
+                                        <th><span>Units</span></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr th:each="parameter : ${fault.parameters}"
+                                        th:classappend="${parameter.changed} ? ' bg-gray-700' : ''">
+                                        <td><span th:text="${parameter.name}">Engine Coolant Temperature</span></td>
+                                        <td><span th:text="${parameter.first}">203.3</span></td>
+                                        <td>
+                                            <span th:classappend="${parameter.changed} ? ' text-gold font-bold' : ''"
+                                                  th:text="${parameter.last}">203.6</span>
+                                        </td>
+                                        <td><span th:text="${parameter.units}">°F</span></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                                <div th:if="${fault.parameters.isEmpty()}" class="p-3 text-nord-4">
+                                    Structured row parsing did not find values in this block. Raw extracted text is still retained below.
+                                </div>
+                            </div>
+                        </details>
+
+                        <details data-cummins-details class="rounded border border-gray-600 bg-gray-900">
+                            <summary class="cursor-pointer select-none p-3 text-nord-4">
+                                Raw extracted fault block
+                            </summary>
+                            <div class="overflow-x-auto border-t border-gray-600 p-3 font-mono text-nord-5">
+                                <div th:each="line : ${fault.rawLines}"
+                                     class="whitespace-pre"
+                                     th:text="${line}">raw line</div>
+                            </div>
+                        </details>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </section>
+</main>
