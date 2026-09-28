@@ -170,14 +170,13 @@
                         </div>
 
                         <span class="rounded px-2 py-1 font-bold"
-                              th:classappend="${fault.active} ? ' bg-tokyo-dark-red text-gray-900' : ' bg-nord-3 text-nord-6'"
+                              th:classappend="${fault.active ? ' bg-tokyo-dark-red text-gray-900' : ' bg-nord-3 text-nord-6'}"
                               th:text="${fault.status}">
                             Inactive
                         </span>
 
                         <span class="rounded px-2 py-1"
-                              th:classappend="${fault.lampKey == 'red'} ? ' bg-tokyo-dark-red text-gray-900' :
-                                             (${fault.lampKey == 'amber'} ? ' bg-tokyo-dark-yellow text-gray-900' : ' bg-nord-3 text-nord-6')"
+                              th:classappend="${fault.lampKey == 'red' ? ' bg-tokyo-dark-red text-gray-900' : (fault.lampKey == 'amber' ? ' bg-tokyo-dark-yellow text-gray-900' : ' bg-nord-3 text-nord-6')}"
                               th:text="${fault.lamp + ' lamp'}">
                             Amber lamp
                         </span>
@@ -230,11 +229,11 @@
                                     </thead>
                                     <tbody>
                                     <tr th:each="parameter : ${fault.parameters}"
-                                        th:classappend="${parameter.changed} ? ' bg-gray-700' : ''">
+                                        th:classappend="${parameter.changed ? ' bg-gray-700' : ''}">
                                         <td><span th:text="${parameter.name}">Engine Coolant Temperature</span></td>
                                         <td><span th:text="${parameter.first}">203.3</span></td>
                                         <td>
-                                            <span th:classappend="${parameter.changed} ? ' text-gold font-bold' : ''"
+                                            <span th:classappend="${parameter.changed ? ' text-gold font-bold' : ''}"
                                                   th:text="${parameter.last}">203.6</span>
                                         </td>
                                         <td><span th:text="${parameter.units}">°F</span></td>
