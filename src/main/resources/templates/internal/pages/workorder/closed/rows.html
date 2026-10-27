@@ -1,0 +1,13 @@
+<th:block xmlns:th="http://www.thymeleaf.org" th:fragment="rows">
+    <tr th:each="order : ${orders}">
+        <td class="WorkorderId" th:text="${order.workOrderNumber}"></td>
+        <td class="CustomerName" th:text="${order.customerName}"></td>
+        <td class="DateReceived" th:text="${order.receivedAt}"></td>
+        <td class="UnitNumber" th:text="${order.unitNumber}"></td>
+        <td class="OdometerIn" th:text="${order.odometerIn}"></td>
+        <td class="Status" th:text="${order.status}"></td>
+        <td class="Recommendations" th:text="${order.recommendations}"></td>
+        <td class="Complaint" th:text="${order.complaint}"></td>
+        <td class="WorkorderTotal" th:text="${order.workOrderTotal}"></td>
+    </tr>
+</th:block>
